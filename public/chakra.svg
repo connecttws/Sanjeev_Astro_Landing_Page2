@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F48C06" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#FFB703" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#E85D04" stop-opacity="0.7"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF3E4" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#FDE2B8" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#FDE2B8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Subtle center glow -->
+  <circle cx="300" cy="300" r="280" fill="url(#sunGlow)"/>
+  
+  <!-- Outer border rings -->
+  <circle cx="300" cy="300" r="290" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="300" cy="300" r="280" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="300" cy="300" r="255" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <circle cx="300" cy="300" r="215" stroke="url(#goldGrad)" stroke-width="2"/>
+  <circle cx="300" cy="300" r="165" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="300" cy="300" r="120" stroke="url(#goldGrad)" stroke-width="2.5"/>
+  <circle cx="300" cy="300" r="60" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="300" cy="300" r="24" fill="url(#goldGrad)"/>
+
+  <!-- 12 Radiating Zodiac Spoke Lines -->
+  <g stroke="url(#goldGrad)" stroke-width="1.5">
+    <line x1="300" y1="45" x2="300" y2="555"/>
+    <line x1="45" y1="300" x2="555" y2="300"/>
+    <line x1="120" y1="120" x2="480" y2="480"/>
+    <line x1="120" y1="480" x2="480" y2="120"/>
+    <line x1="172" y1="79" x2="428" y2="521"/>
+    <line x1="428" y1="79" x2="172" y2="521"/>
+    <line x1="79" y1="172" x2="521" y2="428"/>
+    <line x1="79" y1="428" x2="521" y2="172"/>
+  </g>
+
+  <!-- Decorative 8-pointed and 12-pointed Star Geometry -->
+  <polygon points="300,85 345,255 515,300 345,345 300,515 255,345 85,300 255,255" 
+           stroke="url(#goldGrad)" stroke-width="1.5" fill="none"/>
+  <polygon points="300,120 375,175 425,250 425,350 375,425 300,480 225,425 175,350 175,250 225,175" 
+           stroke="url(#goldGrad)" stroke-width="1.2" stroke-dasharray="5 3" fill="none"/>
+
+  <!-- 12 Zodiac House Markers (Aries to Pisces Symbols stylized) -->
+  <!-- 0 deg (Top) -->
+  <circle cx="300" cy="70" r="6" fill="#F48C06"/>
+  <!-- 30 deg -->
+  <circle cx="415" cy="100" r="5" fill="#F48C06"/>
+  <!-- 60 deg -->
+  <circle cx="500" cy="185" r="5" fill="#F48C06"/>
+  <!-- 90 deg (Right) -->
+  <circle cx="530" cy="300" r="6" fill="#F48C06"/>
+  <!-- 120 deg -->
+  <circle cx="500" cy="415" r="5" fill="#F48C06"/>
+  <!-- 150 deg -->
+  <circle cx="415" cy="500" r="5" fill="#F48C06"/>
+  <!-- 180 deg (Bottom) -->
+  <circle cx="300" cy="530" r="6" fill="#F48C06"/>
+  <!-- 210 deg -->
+  <circle cx="185" cy="500" r="5" fill="#F48C06"/>
+  <!-- 240 deg -->
+  <circle cx="100" cy="415" r="5" fill="#F48C06"/>
+  <!-- 270 deg (Left) -->
+  <circle cx="70" cy="300" r="6" fill="#F48C06"/>
+  <!-- 300 deg -->
+  <circle cx="100" cy="185" r="5" fill="#F48C06"/>
+  <!-- 330 deg -->
+  <circle cx="185" cy="100" r="5" fill="#F48C06"/>
+
+  <!-- Sacred Vedic Kundali Diamond Inner Pattern -->
+  <rect x="215" y="215" width="170" height="170" stroke="url(#goldGrad)" stroke-width="1.8" fill="none" transform="rotate(45 300 300)"/>
+  <rect x="235" y="235" width="130" height="130" stroke="url(#goldGrad)" stroke-width="1.2" fill="none"/>
+  
+  <!-- Sacred Sanskrit Om Center -->
+  <path d="M295 285 C290 280, 282 284, 282 291 C282 300, 292 305, 300 312 C308 305, 318 300, 318 291 C318 284, 310 280, 305 285" 
+        stroke="#E85D04" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <circle cx="300" cy="275" r="3" fill="#E85D04"/>
+</svg>

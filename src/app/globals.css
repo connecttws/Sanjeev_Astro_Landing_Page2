@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-outfit: "Outfit", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+    --font-jakarta: "Plus Jakarta Sans", sans-serif;
+    --font-cinzel: "Cinzel", serif;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    font-family: var(--font-outfit);
+    background-color: #FFFDF9;
+    color: #1E2260;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100dvh;
+  }
+}
+
+/* Custom Keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(244, 140, 6, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(244, 140, 6, 0.7);
+  }
+}
+
+/* Animation utility classes */
+.animate-shimmer {
+  animation: shimmer 3s infinite linear;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 50s infinite linear;
+}
+
+.animate-float {
+  animation: floatSoft 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Glass & elevated cards */
+.vedic-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(244, 140, 6, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(244, 140, 6, 0.08), 0 4px 12px rgba(30, 34, 96, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vedic-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(244, 140, 6, 0.4);
+  box-shadow: 0 20px 35px -10px rgba(244, 140, 6, 0.15), 0 10px 20px rgba(30, 34, 96, 0.08);
+}
+
+.vedic-dark-card {
+  background: linear-gradient(135deg, #1A1D47 0%, #121538 100%);
+  border: 1px solid rgba(244, 140, 6, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(10, 12, 35, 0.7), 0 0 30px rgba(244, 140, 6, 0.1);
+}
+
+/* Shimmer Button Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #FBE0C7;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F48C06;
+}

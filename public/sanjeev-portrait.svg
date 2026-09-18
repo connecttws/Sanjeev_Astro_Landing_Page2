@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D1B69"/>
+      <stop offset="50%" stop-color="#1B1E4B"/>
+      <stop offset="100%" stop-color="#0F112E"/>
+    </linearGradient>
+    <linearGradient id="haloGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD166" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F48C06" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="auraGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#F48C06" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#FFB703" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="kurtaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5E1"/>
+      <stop offset="50%" stop-color="#FCE1BA"/>
+      <stop offset="100%" stop-color="#E5A65E"/>
+    </linearGradient>
+    <linearGradient id="shawlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E85D04"/>
+      <stop offset="100%" stop-color="#9D0208"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Cosmic Background Circle -->
+  <circle cx="250" cy="250" r="235" fill="url(#bgGrad)"/>
+  <circle cx="250" cy="250" r="235" stroke="#F48C06" stroke-width="3" stroke-dasharray="6 4"/>
+  <circle cx="250" cy="250" r="225" stroke="#FFD166" stroke-width="1.5"/>
+
+  <!-- Divine Aura Glow -->
+  <circle cx="250" cy="210" r="160" fill="url(#auraGlow)"/>
+
+  <!-- Golden Halo / Radiant Rays -->
+  <g stroke="url(#haloGrad)" stroke-width="1.5" stroke-dasharray="3 3">
+    <line x1="250" y1="50" x2="250" y2="90"/>
+    <line x1="360" y1="95" x2="330" y2="125"/>
+    <line x1="410" y1="205" x2="370" y2="205"/>
+    <line x1="90" y1="205" x2="130" y2="205"/>
+    <line x1="140" y1="95" x2="170" y2="125"/>
+  </g>
+
+  <!-- Astrologer Figure Silhouette & Art -->
+  <!-- Shoulders & Torso (Kurta) -->
+  <path d="M120 480 C120 370, 160 330, 250 330 C340 330, 380 370, 380 480 Z" fill="url(#kurtaGrad)"/>
+  
+  <!-- Saffron Traditional Angavastram / Shawl across shoulder -->
+  <path d="M120 480 C130 380, 180 340, 220 340 C210 390, 190 440, 185 480 Z" fill="url(#shawlGrad)"/>
+  <path d="M185 340 C220 340, 260 370, 290 480 C270 480, 240 420, 210 390 Z" fill="#D90429" opacity="0.4"/>
+
+  <!-- Golden Embroidered Kurta Collar -->
+  <path d="M215 330 C235 345, 265 345, 285 330 L275 390 C260 400, 240 400, 225 390 Z" fill="#FFD166"/>
+  <circle cx="250" cy="355" r="3" fill="#D90429"/>
+  <circle cx="250" cy="375" r="3" fill="#D90429"/>
+
+  <!-- Rudraksha Beads Mala -->
+  <g fill="#7F260F" stroke="#F48C06" stroke-width="0.8">
+    <circle cx="205" cy="355" r="5"/>
+    <circle cx="218" cy="370" r="5"/>
+    <circle cx="233" cy="382" r="5.5"/>
+    <circle cx="250" cy="388" r="6"/>
+    <circle cx="267" cy="382" r="5.5"/>
+    <circle cx="282" cy="370" r="5"/>
+    <circle cx="295" cy="355" r="5"/>
+  </g>
+  <!-- Sacred pendant -->
+  <circle cx="250" cy="398" r="4" fill="#FFD166"/>
+
+  <!-- Neck -->
+  <path d="M225 275 L225 335 C235 342, 265 342, 275 335 L275 275 Z" fill="#E2A76F"/>
+
+  <!-- Head & Face -->
+  <ellipse cx="250" cy="225" rx="55" ry="68" fill="#F3BE8B"/>
+  
+  <!-- Ears -->
+  <ellipse cx="193" cy="228" rx="8" ry="14" fill="#E2A76F"/>
+  <ellipse cx="307" cy="228" rx="8" ry="14" fill="#E2A76F"/>
+
+  <!-- Hair & Traditional Hairstyle -->
+  <path d="M193 215 C190 150, 230 145, 250 145 C270 145, 310 150, 307 215 C295 165, 265 160, 250 160 C235 160, 205 165, 193 215 Z" fill="#201A1E"/>
+  <path d="M192 210 C190 235, 197 250, 198 250 C198 230, 195 215, 192 210 Z" fill="#201A1E"/>
+  <path d="M308 210 C310 235, 303 250, 302 250 C302 230, 305 215, 308 210 Z" fill="#201A1E"/>
+
+  <!-- Eyes & Eyebrows -->
+  <path d="M215 203 Q228 197 238 203" stroke="#2B1E16" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M262 203 Q272 197 285 203" stroke="#2B1E16" stroke-width="2.8" stroke-linecap="round"/>
+  <!-- Gentle, smiling, wise eyes -->
+  <ellipse cx="227" cy="214" rx="7" ry="4.5" fill="#2B1E16"/>
+  <circle cx="228" cy="213" r="1.5" fill="#FFFFFF"/>
+  <ellipse cx="273" cy="214" rx="7" ry="4.5" fill="#2B1E16"/>
+  <circle cx="274" cy="213" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Nose -->
+  <path d="M249 208 Q252 232 245 237 Q250 240 255 237" stroke="#C98852" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Peaceful, Wise Smile -->
+  <path d="M235 254 Q250 264 265 254" stroke="#A74A36" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Neat Trim Beard & Mustache -->
+  <path d="M228 245 Q250 252 272 245 Q262 249 250 249 Q238 249 228 245 Z" fill="#2B1E16" opacity="0.85"/>
+  <path d="M220 255 C220 285, 235 295, 250 295 C265 295, 280 255, 280 255 C275 285, 260 290, 250 290 C240 290, 225 285, 220 255 Z" fill="#2B1E16" opacity="0.8"/>
+
+  <!-- Sacred Vedic Tilak on Forehead -->
+  <path d="M246 175 Q250 170 254 175 L254 195 Q250 198 246 195 Z" fill="#FFD166"/>
+  <circle cx="250" cy="190" r="2.2" fill="#D90429"/>
+
+  <!-- Floating Sparkles / Constellation Stars -->
+  <g fill="#FFD166">
+    <circle cx="100" cy="130" r="2"/>
+    <circle cx="130" cy="110" r="2.5"/>
+    <circle cx="380" cy="120" r="2"/>
+    <circle cx="410" cy="150" r="2.5"/>
+    <circle cx="90" cy="320" r="2"/>
+    <circle cx="420" cy="300" r="2"/>
+  </g>
+</svg>
