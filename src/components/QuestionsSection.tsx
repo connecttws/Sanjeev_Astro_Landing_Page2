@@ -110,7 +110,7 @@ export default function QuestionsSection({
   onBookClick,
 }: QuestionsSectionProps) {
   return (
-    <section id="questions" className="py-12 sm:py-16 bg-[#FFFDF9] relative">
+    <section id="questions" className="py-8 sm:py-12 bg-[#FFFDF9] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -133,7 +133,7 @@ export default function QuestionsSection({
         </div>
 
         {/* Rich 2x2 Categories Grid — 3D Elevated Cards with Orange Border & Moving Glow */}
-        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
           {CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             return (

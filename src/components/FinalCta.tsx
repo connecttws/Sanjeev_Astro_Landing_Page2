@@ -9,7 +9,7 @@ interface FinalCtaProps {
 
 export default function FinalCta({ onBookClick }: FinalCtaProps) {
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-[#FFFDF9] via-[#FFF3E4] to-[#FFFDF9] relative overflow-hidden">
+    <section className="py-10 sm:py-14 bg-gradient-to-b from-[#FFFDF9] via-[#FFF3E4] to-[#FFFDF9] relative overflow-hidden">
       {/* Background Rotating Chakra Accent */}
       <div className="absolute -bottom-20 -left-20 w-[450px] h-[450px] opacity-15 pointer-events-none">
         <Image

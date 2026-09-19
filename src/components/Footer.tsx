@@ -5,7 +5,7 @@ import { ShieldCheck, Lock, HeartHandshake } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#121538] text-gray-300 pt-14 pb-24 sm:pb-20 border-t border-[#F48C06]/20 relative">
+    <footer className="bg-[#121538] text-gray-300 pt-10 sm:pt-12 pb-24 sm:pb-20 border-t border-[#F48C06]/20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Info Strip */}

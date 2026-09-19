@@ -10,7 +10,7 @@ export default function TransitionBanner({
   onBookClick,
 }: TransitionBannerProps) {
   return (
-    <section className="relative py-16 sm:py-20 bg-gradient-to-r from-[#121538] via-[#1E2260] to-[#2D1B69] text-white overflow-hidden border-y border-[#F48C06]/30 shadow-2xl">
+    <section className="relative py-10 sm:py-14 bg-gradient-to-r from-[#121538] via-[#1E2260] to-[#2D1B69] text-white overflow-hidden border-y border-[#F48C06]/30 shadow-2xl">
       {/* Subtle Star Dust Particles Effect */}
       <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#F48C06_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 

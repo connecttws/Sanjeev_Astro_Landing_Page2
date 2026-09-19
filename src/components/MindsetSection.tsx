@@ -8,7 +8,7 @@ interface MindsetSectionProps {
 
 export default function MindsetSection({ onBookClick }: MindsetSectionProps) {
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-[#FFFDF9] via-[#FFF5E8] to-[#FFFDF9] relative">
+    <section className="py-10 sm:py-14 bg-gradient-to-b from-[#FFFDF9] via-[#FFF5E8] to-[#FFFDF9] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -28,7 +28,7 @@ export default function MindsetSection({ onBookClick }: MindsetSectionProps) {
         </div>
 
         {/* 2-Col Comparison Grid */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Card 1: Generic Horoscope */}
           <div className="bg-white/70 border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm">

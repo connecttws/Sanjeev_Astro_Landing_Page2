@@ -16,6 +16,7 @@ import MindsetSection from "@/components/MindsetSection";
 import FaqSection from "@/components/FaqSection";
 import FinalCta from "@/components/FinalCta";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import BookingModal from "@/components/BookingModal";
 
@@ -49,6 +50,9 @@ export default function Home() {
       {/* 3. Hero Section (AstroLearn / Vaibhav Gupta aesthetic with rotating chakra) */}
       <Hero onBookClick={() => handleOpenModal()} />
 
+      {/* Vedic Divider */}
+      <SectionDivider symbol="om" />
+
       {/* 4. Har Sawaal Ka Personalized Jawab (Questions Explorer) */}
       <QuestionsSection
         onSelectQuestion={handleSelectQuestion}
@@ -61,11 +65,20 @@ export default function Home() {
       {/* 6. Why Consult Sanjeev Kumar Pandey? */}
       <WhySection />
 
+      {/* Vedic Divider between WhySection & TopicsSection */}
+      <SectionDivider symbol="sparkles" />
+
       {/* 7. Aap Kis Topic Par Sawaal Pooch Sakte Hain? */}
       <TopicsSection onTopicSelect={handleTopicSelect} />
 
+      {/* Vedic Divider between TopicsSection & BenefitsSection */}
+      <SectionDivider symbol="star" />
+
       {/* 8. Aapko Kya Milega? (5 Core Deliverables) */}
       <BenefitsSection />
+
+      {/* Vedic Divider between BenefitsSection & PricingSection */}
+      <SectionDivider symbol="om" />
 
       {/* 9. Featured ₹99 Pricing Card */}
       <PricingSection onBookClick={() => handleOpenModal()} />
@@ -76,11 +89,20 @@ export default function Home() {
       {/* 11. Consultation Ka Process (01 - 04 Step Flow) */}
       <ProcessSection onBookClick={() => handleOpenModal()} />
 
+      {/* Vedic Divider between ProcessSection & MindsetSection */}
+      <SectionDivider symbol="sparkles" />
+
       {/* 12. Mindset Comparison: Generic Horoscope vs Personalized Consultation */}
       <MindsetSection onBookClick={() => handleOpenModal()} />
 
+      {/* Vedic Divider between MindsetSection & FaqSection */}
+      <SectionDivider symbol="star" />
+
       {/* 13. Frequently Asked Questions (Accordion) */}
       <FaqSection />
+
+      {/* Vedic Divider between FaqSection & FinalCta */}
+      <SectionDivider symbol="om" />
 
       {/* 14. Final Call To Action Banner */}
       <FinalCta onBookClick={() => handleOpenModal()} />

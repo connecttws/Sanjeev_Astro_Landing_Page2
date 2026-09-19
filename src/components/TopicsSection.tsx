@@ -73,7 +73,7 @@ export default function TopicsSection({ onTopicSelect }: TopicsSectionProps) {
   ];
 
   return (
-    <section id="topics" className="py-16 sm:py-24 bg-[#FFFDF9] relative">
+    <section id="topics" className="py-10 sm:py-14 bg-[#FFFDF9] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -96,7 +96,7 @@ export default function TopicsSection({ onTopicSelect }: TopicsSectionProps) {
         </div>
 
         {/* 6 Topics Grid — 3D Elevated Cards */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {topics.map((topic, idx) => {
             const Icon = topic.icon;
             return (

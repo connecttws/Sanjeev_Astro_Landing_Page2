@@ -34,7 +34,7 @@ export default function AstrologerProfile({
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-[#121538] via-[#1A1D47] to-[#121538] text-white relative overflow-hidden border-y border-[#F48C06]/30 shadow-2xl">
+    <section className="py-12 sm:py-16 bg-gradient-to-b from-[#121538] via-[#1A1D47] to-[#121538] text-white relative overflow-hidden border-y border-[#F48C06]/30 shadow-2xl">
       {/* Background Sacred Geometry */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] opacity-10 pointer-events-none">
         <Image

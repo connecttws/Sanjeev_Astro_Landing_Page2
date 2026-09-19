@@ -16,7 +16,7 @@ export default function PricingSection({ onBookClick }: PricingSectionProps) {
   ];
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-[#FFFDF9] relative">
+    <section id="pricing" className="py-10 sm:py-14 bg-[#FFFDF9] relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -39,7 +39,7 @@ export default function PricingSection({ onBookClick }: PricingSectionProps) {
         </div>
 
         {/* Pricing Card */}
-        <div className="mt-10 sm:mt-12 relative rounded-3xl bg-gradient-to-b from-[#FFFDF9] to-[#FFF3E4] border-2 border-[#F48C06] p-4 sm:p-8 lg:p-10 shadow-2xl overflow-hidden">
+        <div className="mt-6 sm:mt-8 relative rounded-3xl bg-gradient-to-b from-[#FFFDF9] to-[#FFF3E4] border-2 border-[#F48C06] p-4 sm:p-8 lg:p-10 shadow-2xl overflow-hidden">
           
           {/* Top Decorative Badge */}
           <div className="absolute top-0 right-0 bg-gradient-to-l from-[#F48C06] to-[#FF7700] text-white text-[10px] sm:text-xs font-extrabold px-3 sm:px-6 py-1 sm:py-1.5 rounded-bl-2xl shadow-md uppercase tracking-wider">

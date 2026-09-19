@@ -42,7 +42,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-[#FFFDF9] relative">
+    <section id="faq" className="py-10 sm:py-14 bg-[#FFFDF9] relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -65,7 +65,7 @@ export default function FaqSection() {
         </div>
 
         {/* FAQ Accordion List */}
-        <div className="mt-10 sm:mt-14 space-y-3.5">
+        <div className="mt-6 sm:mt-10 space-y-3.5">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
