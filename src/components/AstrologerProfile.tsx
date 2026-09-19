@@ -51,23 +51,71 @@ export default function AstrologerProfile({
         {/* Main 2-Col Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Astrologer Photo & Aura */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-48 h-48 min-[380px]:w-60 min-[380px]:h-60 sm:w-80 sm:h-80 rounded-full p-2 sm:p-2.5 bg-gradient-to-tr from-[#F48C06] via-[#FFD166] to-[#E85D04] shadow-2xl shadow-[#F48C06]/30">
-              <div className="w-full h-full rounded-full overflow-hidden bg-[#1A1D47] relative">
-                <Image
-                  src="/sanjeev-portrait.svg"
-                  alt="Sanjeev Kumar Pandey - Vedic Astrologer"
-                  fill
-                  className="object-cover"
-                />
+          {/* Astrologer Photo & Master Vedic Frame */}
+          <div className="lg:col-span-5 xl:col-span-5 flex justify-center w-full mb-6 lg:mb-0">
+            <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-none">
+              
+              {/* Outer Golden/Cosmic Ambient Aura */}
+              <div className="absolute -inset-2 bg-gradient-to-tr from-[#F48C06]/30 via-[#FFD166]/20 to-[#E85D04]/30 blur-xl rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+              {/* Master Ornate Frame */}
+              <div className="relative p-2 sm:p-2.5 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#FFD166] via-[#F48C06] to-[#B34700] shadow-2xl shadow-[#F48C06]/35 transition-transform duration-500 hover:-translate-y-1">
+                
+                {/* Inner Cosmic Border Inlay */}
+                <div className="relative p-1 sm:p-1.5 rounded-[14px] sm:rounded-[22px] bg-[#0E1130] border border-[#FFD166]/40 overflow-hidden">
+                  
+                  {/* Photo Container */}
+                  <div className="relative aspect-[1433/1098] w-full rounded-[10px] sm:rounded-[18px] overflow-hidden bg-[#0A0D24]">
+                    <Image
+                      src="/sanjeev.png"
+                      alt="Acharya Sanjeev Kumar Pandey - Vedic Astrologer"
+                      width={1433}
+                      height={1098}
+                      priority
+                      className="w-full h-full object-cover rounded-[10px] sm:rounded-[18px] transition-transform duration-700 hover:scale-[1.03]"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 500px"
+                    />
+
+                    {/* Top Moving Light Shimmer Beam */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FFD166] to-transparent animate-shimmer pointer-events-none z-10" />
+
+                    {/* Subtle Inner Frame Vignette Gradient */}
+                    <div className="absolute inset-0 ring-1 ring-inset ring-white/15 rounded-[10px] sm:rounded-[18px] pointer-events-none z-10" />
+
+                    {/* Sacred Gold Corner Brackets */}
+                    <div className="absolute top-2.5 left-2.5 w-4 h-4 border-t-2 border-l-2 border-[#FFD166]/80 rounded-tl pointer-events-none z-10" />
+                    <div className="absolute top-2.5 right-2.5 w-4 h-4 border-t-2 border-r-2 border-[#FFD166]/80 rounded-tr pointer-events-none z-10" />
+                    <div className="absolute bottom-2.5 left-2.5 w-4 h-4 border-b-2 border-l-2 border-[#FFD166]/80 rounded-bl pointer-events-none z-10" />
+                    <div className="absolute bottom-2.5 right-2.5 w-4 h-4 border-b-2 border-r-2 border-[#FFD166]/80 rounded-br pointer-events-none z-10" />
+
+                    {/* Floating Top-Left Tag: Certified Vedic Master */}
+                    <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#0B132B]/90 backdrop-blur-md border border-[#FFD166]/40 px-2 sm:px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold text-[#FFD166] flex items-center gap-1.5 shadow-lg z-20">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>Certified Master</span>
+                    </div>
+
+                    {/* Floating Top-Right Tag: 10+ Yrs Exp */}
+                    <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-[#0B132B]/90 backdrop-blur-md border border-[#F48C06]/50 px-2 sm:px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold text-white flex items-center gap-1 shadow-lg z-20">
+                      <Award className="w-3.5 h-3.5 text-[#FFD166]" />
+                      <span>10+ Yrs Exp</span>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Floating Bottom Nameplate / Seal */}
+                <div className="absolute -bottom-3.5 sm:-bottom-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0B132B]/95 via-[#1A1D47]/95 to-[#0B132B]/95 backdrop-blur-md border border-[#FFD166]/60 text-white px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-2xl flex items-center gap-2 whitespace-nowrap z-20">
+                  <Sparkles className="w-3.5 h-3.5 text-[#FFD166] shrink-0" />
+                  <span className="text-[11px] sm:text-xs font-bold tracking-wide text-[#FFFDF9]">
+                    Acharya Sanjeev Kumar Pandey
+                  </span>
+                  <span className="hidden min-[420px]:inline-block text-[10px] px-1.5 py-0.5 rounded bg-[#F48C06]/30 text-[#FFD166] font-semibold border border-[#FFD166]/30">
+                    Verified
+                  </span>
+                </div>
+
               </div>
 
-              {/* Floating verified badge */}
-              <div className="absolute bottom-2 right-1 sm:right-4 bg-white text-[#0B132B] px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-xl border border-[#F48C06] flex items-center gap-1.5 text-[10px] sm:text-xs font-bold whitespace-nowrap">
-                <Sparkles className="w-3.5 h-3.5 text-[#F48C06] shrink-0" />
-                <span>Certified Vedic Astrologer</span>
-              </div>
             </div>
           </div>
 

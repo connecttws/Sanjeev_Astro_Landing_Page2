@@ -86,10 +86,10 @@ export default function VslVideoFrame({
           {/* Right Side Portrait Vignette */}
           <div className="absolute right-3 sm:right-6 bottom-4 sm:bottom-6 w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden bg-[#1A1D47]/80 border border-[#F48C06]/30 shadow-lg pointer-events-none z-0 opacity-80 group-hover:opacity-95 group-hover:scale-105 transition-all duration-500">
             <Image
-              src="/sanjeev-portrait.svg"
+              src="/sanjeev.png"
               alt="Acharya Sanjeev Kumar Pandey"
               fill
-              className="object-cover"
+              className="object-cover object-[center_30%]"
             />
           </div>
 
@@ -196,10 +196,10 @@ export default function VslVideoFrame({
                 <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full p-1.5 bg-gradient-to-tr from-[#F48C06] to-[#FFD166] shadow-2xl mb-3">
                   <div className="w-full h-full rounded-full overflow-hidden bg-[#1A1D47] relative">
                     <Image
-                      src="/sanjeev-portrait.svg"
+                      src="/sanjeev.png"
                       alt="Sanjeev Kumar Pandey"
                       fill
-                      className="object-cover"
+                      className="object-cover object-[center_30%]"
                     />
                   </div>
                 </div>

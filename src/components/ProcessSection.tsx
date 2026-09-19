@@ -19,7 +19,6 @@ interface ProcessSectionProps {
 
 export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
   const [activeStep, setActiveStep] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -62,51 +61,88 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
     },
   ];
 
-  // 1. Scroll-triggered step highlight using IntersectionObserver
+  // User-friendly smooth scroll-driven step highlighting (1 -> 2 -> 3 -> 4)
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "-20% 0px -20% 0px",
-      threshold: 0.2,
-    };
+    let ticking = false;
 
-    const handleIntersect: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = stepRefs.current.findIndex((el) => el === entry.target);
-          if (index !== -1) {
-            setActiveStep(index);
+    const handleScroll = () => {
+      const sectionEl = sectionRef.current;
+      if (!sectionEl) return;
+
+      const rect = sectionEl.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Only calculate if section is in or near the viewport
+      if (rect.bottom < 0 || rect.top > windowHeight) {
+        return;
+      }
+
+      if (window.innerWidth < 1024) {
+        // MOBILE (< 1024px): Smoothly highlight cards as they pass through the viewport center
+        const focusY = windowHeight * 0.5;
+        let closestIdx = 0;
+        let minDistance = Infinity;
+
+        stepRefs.current.forEach((el, idx) => {
+          if (!el) return;
+          const cardRect = el.getBoundingClientRect();
+          const cardCenter = cardRect.top + cardRect.height / 2;
+          const distance = Math.abs(cardCenter - focusY);
+
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestIdx = idx;
           }
-        }
-      });
+        });
+
+        setActiveStep(closestIdx);
+      } else {
+        // DESKTOP (>= 1024px): Progress steps smoothly across 4 segments of section scroll
+        const startY = windowHeight * 0.7;
+        const endY = -windowHeight * 0.1;
+        const totalDist = startY - endY;
+        const currentDist = startY - rect.top;
+        const progress = Math.max(0, Math.min(0.999, currentDist / totalDist));
+        const stepIdx = Math.floor(progress * steps.length);
+        setActiveStep(stepIdx);
+      }
     };
 
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
 
-    stepRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
+    // Calculate on initial mount
+    handleScroll();
 
-    return () => observer.disconnect();
-  }, []);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [steps.length]);
 
-  // 2. Smooth auto-cycling of active steps when visible in viewport and not user-paused
-  useEffect(() => {
-    if (isPaused) return;
-
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 3200);
-
-    return () => clearInterval(interval);
-  }, [isPaused, steps.length]);
+  const handleStepClick = (idx: number) => {
+    setActiveStep(idx);
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      const targetEl = stepRefs.current[idx];
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  };
 
   return (
     <section
       id="process"
       ref={sectionRef}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       className="py-10 sm:py-14 bg-[#FFFDF9] relative overflow-hidden"
     >
       {/* Subtle Background Radial Glow */}
@@ -134,7 +170,7 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
         </div>
 
         {/* ──────── Interactive Step Progression Tracker (Pill Bar) ──────── */}
-        <div className="mt-7 max-w-2xl mx-auto">
+        <div className="mt-6 sm:mt-7 max-w-2xl mx-auto">
           <div className="flex items-center justify-between gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#FFF3E4]/70 border border-[#F48C06]/30 shadow-xs">
             {steps.map((step, idx) => {
               const isActive = activeStep === idx;
@@ -142,10 +178,7 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
               return (
                 <button
                   key={idx}
-                  onClick={() => {
-                    setActiveStep(idx);
-                    setIsPaused(true);
-                  }}
+                  onClick={() => handleStepClick(idx)}
                   className={`flex-1 py-2 sm:py-2.5 px-2 rounded-xl text-center transition-all duration-300 cursor-pointer relative ${
                     isActive
                       ? "bg-gradient-to-r from-[#F48C06] to-[#E85D04] text-white shadow-md shadow-[#F48C06]/30 scale-[1.02]"
@@ -179,20 +212,20 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
         </div>
 
         {/* ──────── 4 Steps Flow Cards (With Moving Beam & Highlight) ──────── */}
-        <div className="mt-8 relative">
+        <div className="mt-7 sm:mt-8 relative">
           
           {/* Desktop Behind-Cards Connecting Flow Line */}
-          <div className="hidden lg:block absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-[#F48C06]/20 via-[#F48C06]/50 to-[#E85D04]/20 -translate-y-1/2 z-0 pointer-events-none rounded-full overflow-hidden">
-            {/* Moving Light Pulse on the Track */}
+          <div className="hidden lg:block absolute top-[44%] left-10 right-10 h-1.5 bg-[#FFF3E4] border border-[#F48C06]/20 -translate-y-1/2 z-0 pointer-events-none rounded-full overflow-hidden">
+            {/* Active Progress Fill */}
             <div
-              className="h-full bg-gradient-to-r from-transparent via-[#F48C06] to-transparent w-36 transition-all duration-700 ease-in-out"
+              className="h-full bg-gradient-to-r from-[#F48C06] via-[#FF9E00] to-[#E85D04] transition-all duration-500 ease-out rounded-full"
               style={{
-                transform: `translateX(${activeStep * 280}%)`,
+                width: `${activeStep === 0 ? "12%" : activeStep === 1 ? "38%" : activeStep === 2 ? "65%" : "100%"}`,
               }}
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative z-10">
             {steps.map((step, idx) => {
               const Icon = step.icon;
               const isActive = activeStep === idx;
@@ -204,13 +237,15 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
                   ref={(el) => {
                     stepRefs.current[idx] = el;
                   }}
-                  onClick={() => {
-                    setActiveStep(idx);
-                    setIsPaused(true);
+                  onClick={() => handleStepClick(idx)}
+                  onMouseEnter={() => {
+                    if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+                      setActiveStep(idx);
+                    }
                   }}
-                  className={`relative p-6 rounded-2xl cursor-pointer transition-all duration-500 overflow-hidden flex flex-col justify-between ${
+                  className={`relative p-5 sm:p-6 rounded-2xl cursor-pointer transition-all duration-500 overflow-hidden flex flex-col justify-between ${
                     isActive
-                      ? "bg-gradient-to-b from-white via-[#FFF9F2] to-[#FFF3E4] border-2 border-[#F48C06] ring-4 ring-[#F48C06]/25 shadow-2xl shadow-[#F48C06]/25 -translate-y-2"
+                      ? "bg-gradient-to-b from-white via-[#FFF9F2] to-[#FFF3E4] border-2 border-[#F48C06] ring-4 ring-[#F48C06]/25 shadow-2xl shadow-[#F48C06]/25 -translate-y-1.5 sm:-translate-y-2"
                       : isPassed
                       ? "bg-white/95 border-2 border-[#F48C06]/40 shadow-md hover:-translate-y-1 hover:border-[#F48C06]"
                       : "bg-white/80 border-2 border-gray-200 shadow-sm hover:border-[#F48C06]/50 hover:-translate-y-1 opacity-90"
@@ -230,7 +265,7 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
 
                   <div className="relative z-10">
                     {/* Card Top Row: Step Badge & Icon */}
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center justify-between mb-3.5 sm:mb-4">
                       <div className="flex items-center gap-2">
                         <span
                           className={`font-serif font-black text-xl px-3 py-1 rounded-xl shadow-xs transition-colors ${
@@ -254,7 +289,7 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
                       </div>
 
                       <div
-                        className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                        className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
                           isActive
                             ? "bg-[#F48C06] text-white shadow-md shadow-[#F48C06]/40 scale-110"
                             : "bg-[#FFF3E4] border border-[#F48C06]/30 text-[#E85D04]"
@@ -266,13 +301,13 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
 
                     {/* Step Title & Hindi Subtitle */}
                     <h3
-                      className={`font-serif font-bold text-lg transition-colors ${
+                      className={`font-serif font-bold text-base sm:text-lg transition-colors ${
                         isActive ? "text-[#E85D04]" : "text-[#0B132B]"
                       }`}
                     >
                       {step.title}
                     </h3>
-                    <p className="text-xs text-[#E85D04] font-bold mt-0.5 mb-2.5">
+                    <p className="text-xs text-[#E85D04] font-bold mt-0.5 mb-2 sm:mb-2.5">
                       {step.hindi}
                     </p>
 
@@ -283,7 +318,7 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
 
                   {/* Card Bottom: Status & Next Arrow Indicator */}
                   <div
-                    className={`relative z-10 mt-5 pt-3 border-t flex items-center justify-between text-xs font-bold ${
+                    className={`relative z-10 mt-4 sm:mt-5 pt-3 border-t flex items-center justify-between text-xs font-bold ${
                       isActive
                         ? "border-[#F48C06]/40 text-[#E85D04]"
                         : isPassed
@@ -295,7 +330,7 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
                       {isActive ? (
                         <>
                           <Zap className="w-3.5 h-3.5 text-[#F48C06] fill-[#F48C06]" />
-                          <span>Active Step Now</span>
+                          <span>Active Step</span>
                         </>
                       ) : isPassed ? (
                         <>
@@ -330,12 +365,12 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
         <div className="mt-8 sm:mt-10 text-center">
           <button
             onClick={onBookClick}
-            className="btn-shimmer inline-flex items-center gap-2.5 bg-gradient-to-r from-[#F48C06] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white text-sm sm:text-base font-bold px-8 py-3.5 rounded-xl shadow-xl shadow-[#F48C06]/30 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+            className="btn-shimmer inline-flex items-center gap-2.5 bg-gradient-to-r from-[#F48C06] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white text-xs sm:text-base font-bold px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl shadow-xl shadow-[#F48C06]/30 hover:scale-105 active:scale-95 transition-all cursor-pointer"
           >
             <span>Start Step 01: Book Your Slot (₹99)</span>
             <ArrowRight className="w-4 h-4" />
           </button>
-          <p className="text-[11px] sm:text-xs text-[#64748B] mt-2">
+          <p className="text-[10px] sm:text-xs text-[#64748B] mt-2">
             ⚡ 100% Private & Confidential • Slot Confirmation in 2 Mins
           </p>
         </div>
