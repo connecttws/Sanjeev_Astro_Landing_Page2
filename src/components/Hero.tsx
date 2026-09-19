@@ -40,16 +40,17 @@ export default function Hero({ onBookClick }: HeroProps) {
           {/* ──────── Left Column: Compelling Hook, VSL (on mobile), & Value Proposition ──────── */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left min-w-0">
             
-            {/* Trust Pill */}
-            <div className="section-eyebrow mb-3 sm:mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-[#E85D04] shrink-0" />
-              <span>Vedic Astrology • 15,000+ Consultations</span>
+            {/* Trust Pill - Guaranteed 1 single line on any mobile screen */}
+            <div className="section-eyebrow mb-2.5 sm:mb-4 max-w-full">
+              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#E85D04] shrink-0" />
+              <span className="hidden min-[380px]:inline">Vedic Astrology • 15,000+ Consultations</span>
+              <span className="min-[380px]:hidden">Vedic Astrology • 15K+ Consultations</span>
             </div>
 
             {/* Main Headline - Centered format with balanced 2-line break */}
-            <h1 className="text-2xl min-[380px]:text-3xl sm:text-4xl md:text-5xl lg:text-[45px] font-serif font-extrabold text-[#0B132B] leading-[1.22] tracking-tight break-words">
-              <span className="block">Ab Aapke Saare Sawaalon Ka</span>
-              <span className="text-[#E85D04] relative inline-block mt-1 sm:mt-1.5">
+            <h1 className="text-[21px] min-[360px]:text-[23px] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-[45px] font-serif font-extrabold text-[#0B132B] leading-[1.2] sm:leading-[1.22] tracking-tight break-words">
+              <span className="block whitespace-nowrap">Ab Aapke Saare Sawaalon Ka</span>
+              <span className="text-[#E85D04] relative inline-block mt-0.5 sm:mt-1.5 whitespace-nowrap">
                 Javab Yha Milega!
                 <svg
                   className="absolute -bottom-1.5 left-0 w-full text-[#F48C06]/40"
@@ -68,49 +69,49 @@ export default function Hero({ onBookClick }: HeroProps) {
               </span>
             </h1>
 
-            {/* Concise Subtitle */}
-            <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#334155] leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Career, Marriage ya Business ki confusion door kijiye apni Janma Kundali ke personalized Vedic margdarshan se.
+            {/* Concise Subtitle - Strictly 2 lines on small screens */}
+            <p className="mt-2.5 sm:mt-3.5 text-[12px] min-[360px]:text-[13px] min-[400px]:text-sm sm:text-base md:text-lg text-[#334155] leading-snug sm:leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Career, Marriage ya Business ki confusion door kijiye Janma Kundali ke personalized Vedic margdarshan se.
             </p>
 
             {/* ──────── Mobile View: VSL Video Frame (Directly after subtitle on mobile screens) ──────── */}
-            <div className="lg:hidden w-full max-w-md my-4">
+            <div className="lg:hidden w-full max-w-md my-3 sm:my-4">
               <VslVideoFrame onBookClick={onBookClick} />
             </div>
 
             {/* Sleek Feature Pills — Guaranteed Single Line on Mobile View */}
-            <div className="mt-2 sm:mt-4 flex flex-nowrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 text-[11px] min-[360px]:text-[11.5px] sm:text-sm text-[#0B132B] w-full max-w-full overflow-x-auto sm:overflow-visible no-scrollbar">
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FFF3E4] px-2 sm:px-2.5 py-1 rounded-lg border border-[#F48C06]/30 font-semibold shrink-0 whitespace-nowrap shadow-xs">
-                <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F48C06] shrink-0" />
+            <div className="mt-2.5 sm:mt-4 flex flex-nowrap items-center justify-center lg:justify-start gap-1 min-[360px]:gap-1.5 sm:gap-2 text-[10px] min-[360px]:text-[11px] sm:text-sm text-[#0B132B] w-full max-w-full overflow-x-auto sm:overflow-visible no-scrollbar">
+              <span className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FFF3E4] px-1.5 min-[360px]:px-2.5 py-0.5 min-[360px]:py-1 rounded-lg border border-[#F48C06]/30 font-semibold shrink-0 whitespace-nowrap shadow-xs">
+                <Clock className="w-2.5 h-2.5 min-[360px]:w-3 min-[360px]:h-3 text-[#F48C06] shrink-0" />
                 <span>15 Min 1-on-1</span>
               </span>
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FFF3E4] px-2 sm:px-2.5 py-1 rounded-lg border border-[#F48C06]/30 font-semibold shrink-0 whitespace-nowrap shadow-xs">
-                <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F48C06] shrink-0" />
+              <span className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FFF3E4] px-1.5 min-[360px]:px-2.5 py-0.5 min-[360px]:py-1 rounded-lg border border-[#F48C06]/30 font-semibold shrink-0 whitespace-nowrap shadow-xs">
+                <Globe className="w-2.5 h-2.5 min-[360px]:w-3 min-[360px]:h-3 text-[#F48C06] shrink-0" />
                 <span>Hindi & English</span>
               </span>
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FFF3E4] px-2 sm:px-2.5 py-1 rounded-lg border border-[#F48C06]/30 font-semibold shrink-0 whitespace-nowrap shadow-xs">
-                <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F48C06] shrink-0" />
+              <span className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FFF3E4] px-1.5 min-[360px]:px-2.5 py-0.5 min-[360px]:py-1 rounded-lg border border-[#F48C06]/30 font-semibold shrink-0 whitespace-nowrap shadow-xs">
+                <Lock className="w-2.5 h-2.5 min-[360px]:w-3 min-[360px]:h-3 text-[#F48C06] shrink-0" />
                 <span>100% Private</span>
               </span>
             </div>
 
             {/* Clean Price & Primary CTA */}
-            <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 w-full">
+            <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4 w-full">
               <div className="flex items-baseline gap-2 shrink-0">
-                <span className="text-3xl sm:text-4xl font-extrabold text-[#F48C06]">
+                <span className="text-2xl sm:text-4xl font-extrabold text-[#F48C06]">
                   ₹99
                 </span>
-                <span className="text-sm text-gray-400 line-through font-medium">
+                <span className="text-xs sm:text-sm text-gray-400 line-through font-medium">
                   ₹999
                 </span>
-                <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded-md">
+                <span className="bg-emerald-100 text-emerald-700 text-[10px] sm:text-xs font-bold px-1.5 py-0.5 rounded-md">
                   90% OFF
                 </span>
               </div>
 
               <button
                 onClick={onBookClick}
-                className="btn-shimmer w-full sm:w-auto flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#F48C06] via-[#FF7700] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg shadow-[#F48C06]/30 hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center group cursor-pointer"
+                className="btn-shimmer w-full sm:w-auto flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#F48C06] via-[#FF7700] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white font-bold text-xs sm:text-base px-5 sm:px-7 py-3 sm:py-3.5 rounded-xl shadow-lg shadow-[#F48C06]/30 hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center group cursor-pointer"
               >
                 <span>Book Consultation Now</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -118,20 +119,20 @@ export default function Hero({ onBookClick }: HeroProps) {
             </div>
 
             {/* Social Proof */}
-            <div className="mt-4 flex items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-[#334155]">
+            <div className="mt-3 sm:mt-4 flex items-center justify-center lg:justify-start gap-1.5 sm:gap-2 text-[11px] min-[360px]:text-xs sm:text-sm text-[#334155] whitespace-nowrap">
               <div className="flex items-center text-[#F48C06]">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-3.5 h-3.5 fill-[#F48C06]"
+                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-[#F48C06]"
                   />
                 ))}
               </div>
               <span className="font-bold text-[#0B132B]">4.9/5</span>
               <span className="text-gray-300">•</span>
               <span>12,000+ Consultations</span>
-              <span className="hidden sm:inline text-gray-300">•</span>
-              <span className="hidden sm:inline text-emerald-700 font-medium">Personal Session</span>
+              <span className="hidden min-[380px]:inline text-gray-300">•</span>
+              <span className="hidden min-[380px]:inline text-emerald-700 font-medium">Personal Session</span>
             </div>
 
           </div>

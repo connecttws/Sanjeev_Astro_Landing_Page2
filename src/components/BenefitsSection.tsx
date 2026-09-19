@@ -108,21 +108,21 @@ export default function BenefitsSection() {
             <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
             <span>What You Get in ₹99</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
             Aapko Is Session Mein{" "}
             <span className="text-[#E85D04] relative inline-block">
               Kya Milega?
               <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
             </span>
           </h2>
-          <div className="heading-divider mb-3" />
-          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
+          <div className="heading-divider mb-2.5 sm:mb-3" />
+          <p className="mt-2 sm:mt-3 text-xs min-[360px]:text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
             ₹99 ki is special consultation mein aapko milegi aisi value jo aamtaur par hazaron rupaye ke sessions mein milti hai.
           </p>
         </div>
 
         {/* ──────── Mobile View: Interactive Carousel with Downside Arrows (< md) ──────── */}
-        <div className="md:hidden mt-7">
+        <div className="md:hidden mt-6 sm:mt-7">
           <div
             className="overflow-hidden touch-pan-y"
             onTouchStart={handleTouchStart}
@@ -137,7 +137,7 @@ export default function BenefitsSection() {
                 const Icon = b.icon;
                 return (
                   <div key={i} className="w-full shrink-0 px-1">
-                    <div className="card-3d-orange p-6 flex flex-col justify-between relative group min-h-[310px]">
+                    <div className="card-3d-orange p-4 sm:p-6 flex flex-col justify-between relative group min-h-[300px]">
                       {/* Moving / Shimmering Top Light Beam */}
                       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none" />
 

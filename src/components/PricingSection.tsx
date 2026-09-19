@@ -25,15 +25,15 @@ export default function PricingSection({ onBookClick }: PricingSectionProps) {
             <Zap className="w-3.5 h-3.5 text-[#E85D04]" />
             <span>Limited Period Offer • 90% Off</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
             1-on-1 Personal Consultation —{" "}
             <span className="text-[#E85D04] relative inline-block">
               Sirf ₹99
               <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
             </span>
           </h2>
-          <div className="heading-divider mb-3" />
-          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
+          <div className="heading-divider mb-2.5 sm:mb-3" />
+          <p className="mt-2 sm:mt-3 text-xs min-[360px]:text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
             Agar aapke paas multiple questions hain ya situation ko detail mein discuss karna chahte hain, toh aaj hi book kijiye personal consultation.
           </p>
         </div>

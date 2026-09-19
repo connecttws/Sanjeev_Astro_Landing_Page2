@@ -33,16 +33,16 @@ export default function FinalCta({ onBookClick }: FinalCtaProps) {
             <span>Ab Der Mat Kijiye • Instant Booking</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-serif font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-serif font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
             Aapka Sawaal Chhota Ho Ya Bada... <br />
             <span className="text-[#FFD166] drop-shadow-sm">
               Uska Answer Aapke Liye Important Ho Sakta Hai.
             </span>
           </h2>
 
-          <div className="w-16 h-1 bg-gradient-to-r from-[#FFD166] to-[#F48C06] rounded-full mx-auto my-4" />
+          <div className="w-16 h-1 bg-gradient-to-r from-[#FFD166] to-[#F48C06] rounded-full mx-auto my-3.5 sm:my-4" />
 
-          <p className="mt-2 text-sm sm:text-base text-gray-200 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-2 text-xs min-[360px]:text-sm sm:text-base text-gray-200 max-w-xl mx-auto leading-relaxed">
             Confusion mein samay mat gavaiye. Apni birth chart ke shubh yog aur saral upay samajhkar nischint ho kar aage badhiye.
           </p>
 

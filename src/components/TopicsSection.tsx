@@ -82,15 +82,15 @@ export default function TopicsSection({ onTopicSelect }: TopicsSectionProps) {
             <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
             <span>Scope of Consultation</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
             Aap Kis Topic Par{" "}
             <span className="text-[#E85D04] relative inline-block">
               Sawaal Pooch Sakte Hain?
               <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
             </span>
           </h2>
-          <div className="heading-divider mb-3" />
-          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
+          <div className="heading-divider mb-2.5 sm:mb-3" />
+          <p className="mt-2 sm:mt-3 text-xs min-[360px]:text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
             Apni Janma Kundali ke zariye kisi bhi important life area par personalized guidance lein.
           </p>
         </div>

@@ -120,15 +120,15 @@ export default function ProcessSection({ onBookClick }: ProcessSectionProps) {
             <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
             <span>Simple 4-Step Process</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
             Consultation Ka{" "}
             <span className="text-[#E85D04] relative inline-block">
               Saral Process
               <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
             </span>
           </h2>
-          <div className="heading-divider mb-3" />
-          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
+          <div className="heading-divider mb-2.5 sm:mb-3" />
+          <p className="mt-2 sm:mt-3 text-xs min-[360px]:text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
             Guidance paana behad aasan hai — bas in 4 saral steps ko follow karein.
           </p>
         </div>

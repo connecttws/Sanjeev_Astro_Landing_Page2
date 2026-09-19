@@ -149,10 +149,11 @@ export default function VslVideoFrame({
           </div>
         </div>
 
-        {/* Caption Below Frame */}
-        <div className="mt-2 flex items-center justify-center gap-1.5 text-[11px] sm:text-xs text-[#E85D04] font-semibold text-center">
-          <Sparkles className="w-3.5 h-3.5 shrink-0" />
-          <span>15,000+ logon ne dekha yeh video • 2 Min Clear Explanation</span>
+        {/* Caption Below Frame - Guaranteed Single Line */}
+        <div className="mt-1.5 sm:mt-2 flex items-center justify-center gap-1.5 text-[10px] min-[360px]:text-[11px] sm:text-xs text-[#E85D04] font-semibold text-center whitespace-nowrap">
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+          <span className="hidden min-[360px]:inline">15,000+ logon ne dekha yeh video • 2 Min Guide</span>
+          <span className="min-[360px]:hidden">15,000+ views • 2 Min Guide</span>
         </div>
       </div>
 

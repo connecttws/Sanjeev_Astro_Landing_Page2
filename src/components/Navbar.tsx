@@ -10,11 +10,11 @@ interface NavbarProps {
 export default function Navbar({ onBookClick }: NavbarProps) {
   return (
     <header className="sticky top-0 z-40 w-full bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#F48C06]/20 shadow-[0_2px_15px_rgba(244,140,6,0.06)]">
-      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-2.5 min-[360px]:px-3.5 sm:px-6 lg:px-8 h-15 sm:h-20 flex items-center justify-between gap-2 sm:gap-3">
         
         {/* Brand: Clean, Single Line, No Second Line Wrapping */}
-        <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-          <div className="relative w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#FFF3E4] via-[#FDE1B8] to-[#FFF9F2] border border-[#F48C06]/35 shadow-sm group-hover:scale-105 transition-transform overflow-hidden shrink-0">
+        <a href="#" className="flex items-center gap-2 sm:gap-3 group shrink-0">
+          <div className="relative w-8 h-8 min-[360px]:w-9 min-[360px]:h-9 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#FFF3E4] via-[#FDE1B8] to-[#FFF9F2] border border-[#F48C06]/35 shadow-sm group-hover:scale-105 transition-transform overflow-hidden shrink-0">
             <Image
               src="/chakra.svg"
               alt="Vedic Chakra"
@@ -27,8 +27,8 @@ export default function Navbar({ onBookClick }: NavbarProps) {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="font-serif font-extrabold text-base sm:text-xl lg:text-2xl text-[#0B132B] tracking-tight whitespace-nowrap">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <span className="font-serif font-extrabold text-[14px] min-[360px]:text-base sm:text-xl lg:text-2xl text-[#0B132B] tracking-tight whitespace-nowrap">
               Sanjeev Kumar Pandey
             </span>
             <span className="hidden sm:inline-flex items-center gap-1 bg-[#FFF3E4] text-[#E85D04] border border-[#F48C06]/30 text-[11px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-xs">
@@ -76,9 +76,9 @@ export default function Navbar({ onBookClick }: NavbarProps) {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={onBookClick}
-            className="btn-shimmer flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-[#F48C06] via-[#FF7700] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white font-bold text-xs sm:text-sm px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-md shadow-[#F48C06]/25 hover:scale-105 active:scale-95 transition-all whitespace-nowrap cursor-pointer"
+            className="btn-shimmer flex items-center gap-1 min-[360px]:gap-1.5 sm:gap-2 bg-gradient-to-r from-[#F48C06] via-[#FF7700] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white font-bold text-[11px] min-[360px]:text-xs sm:text-sm px-2.5 min-[360px]:px-3.5 sm:px-5 py-1.5 min-[360px]:py-2 rounded-xl shadow-md shadow-[#F48C06]/25 hover:scale-105 active:scale-95 transition-all whitespace-nowrap cursor-pointer"
           >
-            <CalendarCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <CalendarCheck className="w-3 h-3 min-[360px]:w-3.5 min-[360px]:h-3.5 sm:w-4 sm:h-4" />
             <span>Book @ ₹99</span>
           </button>
         </div>

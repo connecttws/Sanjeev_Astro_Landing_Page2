@@ -90,21 +90,21 @@ export default function WhySection() {
             <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
             <span>Trusted Vedic Astrologer</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
             Why Consult{" "}
             <span className="text-[#E85D04] relative inline-block">
               Sanjeev Kumar Pandey?
               <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
             </span>
           </h2>
-          <div className="heading-divider mb-3" />
-          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
+          <div className="heading-divider mb-2.5 sm:mb-3" />
+          <p className="mt-2 sm:mt-3 text-xs min-[360px]:text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
             Authentic Vedic parampra aur modern practical remedies ka anokha sangam, jo aapke jeevan ko deta hai sateek disha.
           </p>
         </div>
 
         {/* ──────── Mobile View: Photo / Card Carousel with Downside Arrows (< md) ──────── */}
-        <div className="md:hidden mt-8">
+        <div className="md:hidden mt-6 sm:mt-8">
           <div
             className="overflow-hidden touch-pan-y"
             onTouchStart={handleTouchStart}
@@ -118,8 +118,8 @@ export default function WhySection() {
               {reasons.map((item, index) => {
                 const Icon = item.icon;
                 return (
-                  <div key={index} className="w-full shrink-0 px-1.5">
-                    <div className="card-3d-orange p-6 flex flex-col justify-between relative group min-h-[300px]">
+                  <div key={index} className="w-full shrink-0 px-1">
+                    <div className="card-3d-orange p-4 sm:p-6 flex flex-col justify-between relative group min-h-[290px]">
                       {/* Moving / Shimmering Top Light Beam */}
                       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none" />
 

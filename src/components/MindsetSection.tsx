@@ -17,21 +17,21 @@ export default function MindsetSection({ onBookClick }: MindsetSectionProps) {
             <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
             <span>Personalized vs Generic</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
             Aapko Generic Horoscope Nahi... <br className="hidden sm:inline" />
             <span className="text-[#E85D04]">Apne Questions Ke Sateek Answers Chahiye.</span>
           </h2>
-          <div className="heading-divider mb-3" />
-          <p className="mt-3 text-sm sm:text-base text-[#334155] max-w-2xl mx-auto leading-relaxed">
+          <div className="heading-divider mb-2.5 sm:mb-3" />
+          <p className="mt-2 sm:mt-3 text-xs min-[360px]:text-sm sm:text-base text-[#334155] max-w-2xl mx-auto leading-relaxed">
             Har insaan ki birth details alag hoti hain. Isliye aapki situation ko samajhne ke liye personalised consultation zyada relevant ho sakti hai compared to generic daily/monthly horoscope content.
           </p>
         </div>
 
         {/* 2-Col Comparison Grid */}
-        <div className="mt-8 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-6 sm:mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           
           {/* Card 1: Generic Horoscope */}
-          <div className="bg-white/70 border border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+          <div className="bg-white/70 border border-gray-200 rounded-3xl p-4 sm:p-8 shadow-sm">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center text-gray-500 font-bold">
                 ✕

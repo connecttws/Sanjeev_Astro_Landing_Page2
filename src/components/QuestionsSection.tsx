@@ -155,21 +155,21 @@ export default function QuestionsSection({
             <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
             <span>Sateek Kundali Vishleshan</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+          <h2 className="text-[20px] min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
             Har Sawaal Ka{" "}
             <span className="text-[#E85D04] relative inline-block">
               Personalized Jawab
               <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
             </span>
           </h2>
-          <div className="heading-divider mb-3" />
-          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed">
+          <div className="heading-divider mb-2.5 sm:mb-3" />
+          <p className="mt-2 sm:mt-3 text-xs min-[360px]:text-sm sm:text-base text-[#334155] leading-relaxed">
             Aapka sawaal chahe career, shaadi ya business se juda ho — Janma Kundali ke graha-dasha ke aadhar par paiye spasht uttar.
           </p>
         </div>
 
         {/* ──────── Mobile View: Interactive Touch Carousel with Downside Arrows (< md) ──────── */}
-        <div className="md:hidden mt-6">
+        <div className="md:hidden mt-5 sm:mt-6">
           <div
             className="overflow-hidden touch-pan-y"
             onTouchStart={handleTouchStart}
@@ -184,7 +184,7 @@ export default function QuestionsSection({
                 const Icon = cat.icon;
                 return (
                   <div key={cat.id} className="w-full shrink-0 px-1">
-                    <div className="card-3d-orange p-5 flex flex-col justify-between group min-h-[380px]">
+                    <div className="card-3d-orange p-4 sm:p-5 flex flex-col justify-between group min-h-[370px]">
                       {/* Moving / Shimmering Top Light Beam */}
                       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none" />
 
