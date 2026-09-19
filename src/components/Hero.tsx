@@ -7,9 +7,9 @@ import {
   Lock,
   Star,
   ArrowRight,
-  CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import VslVideoFrame from "@/components/VslVideoFrame";
 
 interface HeroProps {
   onBookClick: () => void;
@@ -37,7 +37,7 @@ export default function Hero({ onBookClick }: HeroProps) {
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* ──────── Left Column: Compelling Hook & Value Proposition ──────── */}
+          {/* ──────── Left Column: Compelling Hook, VSL (on mobile), & Value Proposition ──────── */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left min-w-0">
             
             {/* Trust Pill */}
@@ -73,8 +73,13 @@ export default function Hero({ onBookClick }: HeroProps) {
               Career, Marriage ya Business ki confusion door kijiye apni Janma Kundali ke personalized Vedic margdarshan se.
             </p>
 
+            {/* ──────── Mobile View: VSL Video Frame (Directly after subtitle on mobile screens) ──────── */}
+            <div className="lg:hidden w-full max-w-md my-4">
+              <VslVideoFrame onBookClick={onBookClick} />
+            </div>
+
             {/* Sleek Feature Pills — Guaranteed Single Line on Mobile View */}
-            <div className="mt-4 flex flex-nowrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 text-[11px] min-[360px]:text-[11.5px] sm:text-sm text-[#0B132B] w-full max-w-full overflow-x-auto sm:overflow-visible no-scrollbar">
+            <div className="mt-2 sm:mt-4 flex flex-nowrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2 text-[11px] min-[360px]:text-[11.5px] sm:text-sm text-[#0B132B] w-full max-w-full overflow-x-auto sm:overflow-visible no-scrollbar">
               <span className="inline-flex items-center gap-1 sm:gap-1.5 bg-[#FFF3E4] px-2 sm:px-2.5 py-1 rounded-lg border border-[#F48C06]/30 font-semibold shrink-0 whitespace-nowrap shadow-xs">
                 <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#F48C06] shrink-0" />
                 <span>15 Min 1-on-1</span>
@@ -90,7 +95,7 @@ export default function Hero({ onBookClick }: HeroProps) {
             </div>
 
             {/* Clean Price & Primary CTA */}
-            <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 w-full">
+            <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 w-full">
               <div className="flex items-baseline gap-2 shrink-0">
                 <span className="text-3xl sm:text-4xl font-extrabold text-[#F48C06]">
                   ₹99
@@ -131,99 +136,11 @@ export default function Hero({ onBookClick }: HeroProps) {
 
           </div>
 
-          {/* ──────── Right Column: Dignified Astrologer Card & Visual Aura ──────── */}
-          <div className="lg:col-span-5 flex justify-center relative">
-            
-            {/* Visual Frame Container */}
-            <div className="relative w-full max-w-[420px] aspect-[4/4.6] flex items-center justify-center">
-              
-              {/* Outer Glow Halo */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#F48C06]/20 via-[#FFD166]/30 to-[#2F327D]/20 blur-2xl -z-10" />
-
-              {/* Astrologer Showcase Card (Medium-Dark & Light Combination) */}
-              <div className="relative w-full h-full rounded-3xl bg-gradient-to-b from-[#FFF8EE] via-[#FFFFFF] to-[#FFF3E4] border-2 border-[#F48C06]/30 shadow-2xl p-4 sm:p-5 flex flex-col justify-between overflow-hidden">
-                
-                {/* Background subtle Kundali chart texture */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                  <Image
-                    src="/kundali-chart.svg"
-                    alt="Kundali Background"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Top Badge on Card */}
-                <div className="relative z-10 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1.5 bg-[#1E2260] text-[#FFD166] text-xs font-semibold px-3 py-1 rounded-full shadow-md">
-                    <Sparkles className="w-3 h-3 text-[#F48C06]" />
-                    Vedic Jyotish Acharya
-                  </span>
-                  <span className="bg-[#FFF3E4] text-[#E85D04] border border-[#F48C06]/30 text-xs font-bold px-2.5 py-1 rounded-lg">
-                    10+ Yrs Exp
-                  </span>
-                </div>
-
-                {/* Central Astrologer Artwork Image */}
-                <div className="relative z-10 flex-1 flex items-center justify-center my-2">
-                  <div className="relative w-48 h-48 min-[380px]:w-56 min-[380px]:h-56 sm:w-64 sm:h-64 rounded-full p-2 bg-gradient-to-tr from-[#F48C06] via-[#FFD166] to-[#1E2260] shadow-xl">
-                    <div className="w-full h-full rounded-full overflow-hidden bg-[#1A1D47] relative">
-                      <Image
-                        src="/sanjeev-portrait.svg"
-                        alt="Sanjeev Kumar Pandey - Vedic Astrologer"
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
-                        priority
-                      />
-                    </div>
-
-                    {/* Floating verified badge */}
-                    <div className="absolute -bottom-2 right-1 sm:right-2 bg-white text-[#0B132B] px-2.5 sm:px-3 py-1 rounded-full shadow-lg border border-[#F48C06]/40 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold whitespace-nowrap">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 fill-emerald-100 shrink-0" />
-                      <span>Verified Astrologer</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Card Identity & Guarantee Strip */}
-                <div className="relative z-10 bg-[#1E2260] text-white p-3 sm:p-3.5 rounded-2xl border border-[#F48C06]/30 shadow-inner w-full">
-                  <div className="flex items-center justify-between gap-2">
-                    <div className="min-w-0">
-                      <h4 className="font-serif font-bold text-sm sm:text-base text-white truncate">
-                        Sanjeev Kumar Pandey
-                      </h4>
-                      <p className="text-[11px] sm:text-xs text-[#FFD166] truncate">
-                        Vedic Astrology • Kundali & Prashna Expert
-                      </p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <div className="text-[10px] text-gray-300">Starts At</div>
-                      <div className="text-base sm:text-lg font-bold text-[#F48C06]">
-                        ₹99 Only
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Floating Testimonial/Trust Badge Left - Kept strictly within screen bounds */}
-              <div className="absolute -bottom-4 left-1 sm:-left-4 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-xl shadow-xl border border-[#F48C06]/30 flex items-center gap-2.5 z-20 animate-float max-w-[85%]">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#FFF3E4] border border-[#F48C06]/30 flex items-center justify-center text-base sm:text-lg shrink-0">
-                  ✨
-                </div>
-                <div className="text-left min-w-0">
-                  <p className="text-xs font-bold text-[#0B132B] truncate">
-                    98.4% Accuracy
-                  </p>
-                  <p className="text-[10px] sm:text-[11px] text-[#334155] truncate">
-                    Direct Sawaal, Sateek Jawab
-                  </p>
-                </div>
-              </div>
-
+          {/* ──────── Right Column: Desktop View VSL Video Frame (Replaces former image frame) ──────── */}
+          <div className="hidden lg:flex lg:col-span-5 justify-center items-center relative">
+            <div className="w-full max-w-[480px]">
+              <VslVideoFrame onBookClick={onBookClick} />
             </div>
-
           </div>
 
         </div>
