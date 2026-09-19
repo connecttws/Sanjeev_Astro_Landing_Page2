@@ -20,20 +20,22 @@ export default function TransitionBanner({
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         
-        <div className="inline-flex items-center gap-2 bg-[#F48C06]/20 border border-[#F48C06]/40 text-[#FFD166] px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-4">
-          <Sparkles className="w-4 h-4 text-[#F48C06]" />
+        <div className="section-eyebrow-dark mb-4">
+          <Sparkles className="w-3.5 h-3.5 text-[#FFD166]" />
           <span>Vedic Clarity • No Fluff, Pure Direction</span>
         </div>
 
-        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-light text-gray-200">
+        <h3 className="text-base sm:text-lg md:text-xl font-serif font-medium text-amber-200/90 tracking-wider uppercase">
           Agar aapke mind mein bhi aise questions hain...
         </h3>
 
-        <p className="mt-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-[#FFD166] tracking-tight leading-tight">
+        <p className="mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-serif font-extrabold text-[#FFD166] tracking-tight leading-tight max-w-4xl mx-auto drop-shadow-sm">
           Toh Shayad Aapko Ek Personalised Astrological Guidance Ki Zaroorat Hai.
         </p>
 
-        <p className="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        <div className="w-16 h-1 bg-gradient-to-r from-[#FFD166] to-[#F48C06] rounded-full mx-auto my-4" />
+
+        <p className="mt-2 text-sm sm:text-base text-gray-200 max-w-2xl mx-auto leading-relaxed">
           Generic daily horoscope se aapki specific life situations solve nahi hoti. Janma Kundali ke grah aur dasha hi aapke liye sateek rasta dikhate hain.
         </p>
 

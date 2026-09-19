@@ -46,16 +46,21 @@ export default function FaqSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#FFF3E4] border border-[#F48C06]/30 text-[#E85D04] px-4 py-1 rounded-full text-xs sm:text-sm font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Got Questions?</span>
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="section-eyebrow">
+            <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
+            <span>Got Questions? We Have Answers</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-[#1E2260] tracking-tight">
-            Frequently Asked Questions
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+            Frequently Asked{" "}
+            <span className="text-[#E85D04] relative inline-block">
+              Questions
+              <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
+            </span>
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#55597D]">
-            ₹99 consultation se jude sabhi aam sawalon ke uttar yahan padhein.
+          <div className="heading-divider mb-3" />
+          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
+            ₹99 consultation se jude sabhi aam sawalon ke sateek aur spasht uttar yahan padhein.
           </p>
         </div>
 
@@ -74,7 +79,7 @@ export default function FaqSection() {
                 >
                   <div className="flex items-center gap-3">
                     <HelpCircle className="w-5 h-5 text-[#F48C06] shrink-0" />
-                    <span className="font-serif font-bold text-base sm:text-lg text-[#1E2260]">
+                    <span className="font-serif font-bold text-base sm:text-lg text-[#0B132B]">
                       {faq.q}
                     </span>
                   </div>
@@ -88,7 +93,7 @@ export default function FaqSection() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#55597D] leading-relaxed border-t border-gray-100 bg-[#FFFDF9]/60">
+                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#334155] leading-relaxed border-t border-gray-100 bg-[#FFFDF9]/60">
                     <p>{faq.a}</p>
                   </div>
                 )}

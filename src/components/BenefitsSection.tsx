@@ -60,14 +60,19 @@ export default function BenefitsSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#FFF3E4] border border-[#F48C06]/30 text-[#E85D04] px-4 py-1 rounded-full text-xs sm:text-sm font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Consultation Deliverables</span>
+          <div className="section-eyebrow">
+            <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
+            <span>What You Get in ₹99</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-[#1E2260] tracking-tight">
-            Aapko Kya Milega?
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+            Aapko Is Session Mein{" "}
+            <span className="text-[#E85D04] relative inline-block">
+              Kya Milega?
+              <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
+            </span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[#55597D]">
+          <div className="heading-divider mb-3" />
+          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
             ₹99 ki is special consultation mein aapko milegi aisi value jo aamtaur par hazaron rupaye ke sessions mein milti hai.
           </p>
         </div>
@@ -79,8 +84,10 @@ export default function BenefitsSection() {
             return (
               <div
                 key={i}
-                className="vedic-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group hover:border-[#F48C06]/50 transition-all duration-300"
+                className="vedic-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group hover:border-[#F48C06] transition-all duration-300 relative overflow-hidden"
               >
+                {/* Moving / Shimmering Top Light Beam */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none" />
                 <div>
                   <div className="flex items-center justify-between mb-5">
                     <span className="font-serif font-bold text-3xl text-[#F48C06]/40 group-hover:text-[#F48C06] transition-colors">
@@ -91,19 +98,19 @@ export default function BenefitsSection() {
                     </div>
                   </div>
 
-                  <h3 className="font-serif font-bold text-lg sm:text-xl text-[#1E2260]">
+                  <h3 className="font-serif font-bold text-lg sm:text-xl text-[#0B132B]">
                     {b.title}
                   </h3>
                   <p className="text-xs text-[#E85D04] font-medium mt-0.5 mb-3">
                     {b.hindiTitle}
                   </p>
 
-                  <p className="text-xs sm:text-sm text-[#55597D] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#334155] leading-relaxed">
                     {b.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-[#1E2260]">
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs font-semibold text-[#0B132B]">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   <span>{b.tag}</span>
                 </div>

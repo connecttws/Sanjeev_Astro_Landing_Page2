@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import {
-  Calendar,
   Clock,
   Globe,
   Lock,
   Star,
   ArrowRight,
-  ShieldCheck,
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
@@ -19,7 +17,7 @@ interface HeroProps {
 
 export default function Hero({ onBookClick }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FFF6EB] to-[#FFFDF9] pt-6 sm:pt-10 pb-16 sm:pb-24 border-b border-[#F48C06]/15 w-full max-w-[100vw]">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FFF6EB] to-[#FFFDF9] pt-6 sm:pt-10 pb-10 sm:pb-16 border-b border-[#F48C06]/15 w-full max-w-[100vw]">
       {/* Background Rotating Sacred Chakra - Strictly clipped and responsive */}
       <div className="absolute -top-10 right-0 sm:right-[5%] lg:right-[8%] w-64 min-[400px]:w-80 sm:w-[500px] lg:w-[620px] max-w-full aspect-square pointer-events-none opacity-15 sm:opacity-25 -z-0">
         <Image
@@ -42,21 +40,19 @@ export default function Hero({ onBookClick }: HeroProps) {
           {/* ──────── Left Column: Compelling Hook & Value Proposition ──────── */}
           <div className="lg:col-span-7 flex flex-col items-start text-left min-w-0">
             
-            {/* Trust Pill / Authority Badge */}
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-[#FFF3E4] border border-[#F48C06]/40 text-[#E85D04] px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-6 shadow-sm max-w-full">
-              <span className="w-2 h-2 rounded-full bg-[#F48C06] animate-ping shrink-0" />
-              <span className="truncate">10+ Years Vedic Astrology Experience</span>
-              <span className="text-[#F48C06]/50 hidden min-[360px]:inline">•</span>
-              <span className="font-bold text-[#1E2260] hidden min-[360px]:inline shrink-0">15,000+ Guided</span>
+            {/* Trust Pill */}
+            <div className="section-eyebrow mb-3 sm:mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-[#E85D04] shrink-0" />
+              <span>Vedic Astrology • 15,000+ Consultations</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-2xl min-[380px]:text-3xl sm:text-4xl md:text-5xl lg:text-[48px] font-serif font-extrabold text-[#1E2260] leading-[1.18] tracking-tight break-words">
+            <h1 className="text-2xl min-[380px]:text-3xl sm:text-4xl md:text-5xl lg:text-[45px] font-serif font-extrabold text-[#0B132B] leading-[1.18] tracking-tight break-words">
               Ab Aapke Saare Sawaalon Ka{" "}
-              <span className="text-[#F48C06] relative inline-block">
-                Jawaab Yahan Milega!
+              <span className="text-[#E85D04] relative inline-block">
+                Sateek Jawaab
                 <svg
-                  className="absolute -bottom-2 left-0 w-full text-[#F48C06]/35"
+                  className="absolute -bottom-1.5 left-0 w-full text-[#F48C06]/40"
                   viewBox="0 0 250 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -71,121 +67,62 @@ export default function Hero({ onBookClick }: HeroProps) {
               </span>
             </h1>
 
-            {/* Subtitle with High Relatability */}
-            <p className="mt-3.5 sm:mt-5 text-sm sm:text-lg md:text-xl text-[#3A3F6D] font-normal leading-relaxed">
-              <strong className="text-[#1E2260] font-semibold">Career, Marriage, Love, Business, Money</strong> ya <strong className="text-[#1E2260] font-semibold">Life</strong> ko lekar confused ho?
-              Apni Janma Kundali ke aadhar par paiye certified Vedic Margdarshan.
+            {/* Concise Subtitle */}
+            <p className="mt-3.5 text-sm sm:text-base md:text-lg text-[#334155] leading-relaxed max-w-xl">
+              Career, Marriage ya Business ki confusion door kijiye apni Janma Kundali ke personalized Vedic margdarshan se.
             </p>
 
-            <div className="mt-2 inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#E85D04] font-semibold bg-[#FFF3E4]/70 px-2.5 sm:px-3 py-1 rounded-lg border border-[#F48C06]/20 max-w-full">
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F48C06] shrink-0" />
-              <span className="truncate">Har Sawaal Ka Personalized & Sateek Vedic Jawab</span>
+            {/* Sleek Feature Pills */}
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs sm:text-sm text-[#0B132B]">
+              <span className="inline-flex items-center gap-1.5 bg-[#FFF3E4] px-2.5 py-1 rounded-lg border border-[#F48C06]/25 font-semibold">
+                <Clock className="w-3.5 h-3.5 text-[#F48C06]" /> 15 Min 1-on-1 Call
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-[#FFF3E4] px-2.5 py-1 rounded-lg border border-[#F48C06]/25 font-semibold">
+                <Globe className="w-3.5 h-3.5 text-[#F48C06]" /> Hindi & English
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-[#FFF3E4] px-2.5 py-1 rounded-lg border border-[#F48C06]/25 font-semibold">
+                <Lock className="w-3.5 h-3.5 text-[#F48C06]" /> 100% Private
+              </span>
             </div>
 
-            {/* 4 Metadata Highlight Pills - Responsive 2x2 on mobile, 4x1 on desktop */}
-            <div className="mt-5 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 w-full">
-              <div className="bg-[#FBE0C7]/70 border border-[#F48C06]/30 flex items-center gap-2 p-2 sm:p-2.5 rounded-xl min-w-0">
-                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-[#FF7700] text-white flex items-center justify-center shrink-0 shadow-sm">
-                  <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </div>
-                <div className="text-left min-w-0">
-                  <p className="text-[9px] sm:text-[10px] text-[#6E5434] uppercase font-bold tracking-wider truncate">
-                    SLOT DATE
-                  </p>
-                  <p className="text-[11px] sm:text-[13px] font-bold text-[#1E2260] truncate">
-                    Today & Tomorrow
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-[#FBE0C7]/70 border border-[#F48C06]/30 flex items-center gap-2 p-2 sm:p-2.5 rounded-xl min-w-0">
-                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-[#FF7700] text-white flex items-center justify-center shrink-0 shadow-sm">
-                  <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </div>
-                <div className="text-left min-w-0">
-                  <p className="text-[9px] sm:text-[10px] text-[#6E5434] uppercase font-bold tracking-wider truncate">
-                    DURATION
-                  </p>
-                  <p className="text-[11px] sm:text-[13px] font-bold text-[#1E2260] truncate">
-                    15 Mins 1-on-1
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-[#FBE0C7]/70 border border-[#F48C06]/30 flex items-center gap-2 p-2 sm:p-2.5 rounded-xl min-w-0">
-                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-[#FF7700] text-white flex items-center justify-center shrink-0 shadow-sm">
-                  <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </div>
-                <div className="text-left min-w-0">
-                  <p className="text-[9px] sm:text-[10px] text-[#6E5434] uppercase font-bold tracking-wider truncate">
-                    LANGUAGE
-                  </p>
-                  <p className="text-[11px] sm:text-[13px] font-bold text-[#1E2260] truncate">
-                    Hindi & English
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-[#FBE0C7]/70 border border-[#F48C06]/30 flex items-center gap-2 p-2 sm:p-2.5 rounded-xl min-w-0">
-                <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg bg-[#FF7700] text-white flex items-center justify-center shrink-0 shadow-sm">
-                  <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </div>
-                <div className="text-left min-w-0">
-                  <p className="text-[9px] sm:text-[10px] text-[#6E5434] uppercase font-bold tracking-wider truncate">
-                    PRIVACY
-                  </p>
-                  <p className="text-[11px] sm:text-[13px] font-bold text-[#1E2260] truncate">
-                    100% Confidential
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Price & Primary CTA Stack */}
-            <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full">
-              <div className="flex flex-col">
-                <span className="text-xs text-[#55597D] font-semibold uppercase tracking-wider">
-                  Special First Consultation
+            {/* Clean Price & Primary CTA */}
+            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
+              <div className="flex items-baseline gap-2 shrink-0">
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#F48C06]">
+                  ₹99
                 </span>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[#F48C06]">
-                    ₹99
-                  </span>
-                  <span className="text-sm sm:text-base text-gray-400 line-through font-medium">
-                    ₹999
-                  </span>
-                  <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded-md">
-                    90% OFF
-                  </span>
-                </div>
+                <span className="text-sm text-gray-400 line-through font-medium">
+                  ₹999
+                </span>
+                <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded-md">
+                  90% OFF
+                </span>
               </div>
 
               <button
                 onClick={onBookClick}
-                className="btn-shimmer flex-1 w-full sm:w-auto flex items-center justify-center gap-3 bg-gradient-to-r from-[#F48C06] via-[#FF7700] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white font-bold text-base sm:text-lg px-8 py-4 rounded-xl shadow-xl shadow-[#F48C06]/30 hover:shadow-2xl hover:shadow-[#F48C06]/50 hover:scale-[1.02] active:scale-95 transition-all text-center group cursor-pointer"
+                className="btn-shimmer w-full sm:w-auto flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#F48C06] via-[#FF7700] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg shadow-[#F48C06]/30 hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-center group cursor-pointer"
               >
-                <span>BOOK YOUR CONSULTATION</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span>Book Consultation Now</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
-            {/* Rating & Social Proof Badges */}
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-xs sm:text-sm text-[#55597D]">
-              <div className="flex items-center gap-1">
+            {/* Social Proof */}
+            <div className="mt-4 flex items-center gap-2 text-xs sm:text-sm text-[#334155]">
+              <div className="flex items-center text-[#F48C06]">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 fill-[#F48C06] text-[#F48C06]"
+                    className="w-3.5 h-3.5 fill-[#F48C06]"
                   />
                 ))}
               </div>
-              <span className="font-bold text-[#1E2260]">4.9 / 5</span>
-              <span>(12,400+ Verified Consultations)</span>
-              <span className="hidden sm:inline text-gray-300">|</span>
-              <div className="flex items-center gap-1 text-emerald-700 font-medium">
-                <ShieldCheck className="w-4 h-4" />
-                <span>One-to-One Personal Session</span>
-              </div>
+              <span className="font-bold text-[#0B132B]">4.9/5</span>
+              <span className="text-gray-300">•</span>
+              <span>12,000+ Consultations</span>
+              <span className="hidden sm:inline text-gray-300">•</span>
+              <span className="hidden sm:inline text-emerald-700 font-medium">Personal Session</span>
             </div>
 
           </div>
@@ -237,7 +174,7 @@ export default function Hero({ onBookClick }: HeroProps) {
                     </div>
 
                     {/* Floating verified badge */}
-                    <div className="absolute -bottom-2 right-1 sm:right-2 bg-white text-[#1E2260] px-2.5 sm:px-3 py-1 rounded-full shadow-lg border border-[#F48C06]/40 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold whitespace-nowrap">
+                    <div className="absolute -bottom-2 right-1 sm:right-2 bg-white text-[#0B132B] px-2.5 sm:px-3 py-1 rounded-full shadow-lg border border-[#F48C06]/40 flex items-center gap-1.5 text-[11px] sm:text-xs font-bold whitespace-nowrap">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 fill-emerald-100 shrink-0" />
                       <span>Verified Astrologer</span>
                     </div>
@@ -272,10 +209,10 @@ export default function Hero({ onBookClick }: HeroProps) {
                   ✨
                 </div>
                 <div className="text-left min-w-0">
-                  <p className="text-xs font-bold text-[#1E2260] truncate">
+                  <p className="text-xs font-bold text-[#0B132B] truncate">
                     98.4% Accuracy
                   </p>
-                  <p className="text-[10px] sm:text-[11px] text-[#55597D] truncate">
+                  <p className="text-[10px] sm:text-[11px] text-[#334155] truncate">
                     Direct Sawaal, Sateek Jawab
                   </p>
                 </div>

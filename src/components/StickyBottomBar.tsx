@@ -65,16 +65,16 @@ export default function StickyBottomBar({ onBookClick }: StickyBottomBarProps) {
                 90% OFF
               </span>
             </div>
-            <div className="flex items-center gap-1 text-[10px] sm:text-xs text-[#55597D] font-medium">
+            <div className="flex items-center gap-1 text-[10px] sm:text-xs text-[#334155] font-medium">
               <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#F48C06]" />
               <span className="hidden min-[360px]:inline">Offer Ends:</span>
-              <span className="font-mono font-bold text-[#1E2260]">
+              <span className="font-mono font-bold text-[#0B132B]">
                 {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
               </span>
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center gap-2 text-xs text-[#55597D] pl-4 border-l border-gray-200">
+          <div className="hidden lg:flex items-center gap-2 text-xs text-[#334155] pl-4 border-l border-gray-200">
             <Sparkles className="w-4 h-4 text-[#F48C06]" />
             <span>15 Mins One-to-One Personalized Vedic Session</span>
           </div>

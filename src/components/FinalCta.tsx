@@ -28,20 +28,22 @@ export default function FinalCta({ onBookClick }: FinalCtaProps) {
           {/* Subtle gold glow */}
           <div className="absolute top-0 right-1/4 w-72 h-72 rounded-full bg-[#F48C06]/20 blur-3xl pointer-events-none" />
 
-          <div className="inline-flex items-center gap-2 bg-[#F48C06]/20 border border-[#F48C06]/40 text-[#FFD166] px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6">
-            <Sparkles className="w-4 h-4 text-[#F48C06]" />
-            <span>Ab Der Mat Kijiye</span>
+          <div className="section-eyebrow-dark mb-5">
+            <Sparkles className="w-3.5 h-3.5 text-[#FFD166]" />
+            <span>Ab Der Mat Kijiye • Instant Booking</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-serif font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
             Aapka Sawaal Chhota Ho Ya Bada... <br />
-            <span className="text-[#FFD166]">
+            <span className="text-[#FFD166] drop-shadow-sm">
               Uska Answer Aapke Liye Important Ho Sakta Hai.
             </span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-gray-300 max-w-xl mx-auto">
-            Confusion mein samay mat gavaiye. Apni birth chart ke shubh yog aur upay samajhkar aage badhiye.
+          <div className="w-16 h-1 bg-gradient-to-r from-[#FFD166] to-[#F48C06] rounded-full mx-auto my-4" />
+
+          <p className="mt-2 text-sm sm:text-base text-gray-200 max-w-xl mx-auto leading-relaxed">
+            Confusion mein samay mat gavaiye. Apni birth chart ke shubh yog aur saral upay samajhkar nischint ho kar aage badhiye.
           </p>
 
           {/* Big Offer Pill */}

@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative w-full min-h-[100dvh] overflow-x-hidden bg-[#FFFDF9] text-[#1E2260]">
+    <main className="relative w-full min-h-[100dvh] overflow-x-hidden bg-[#FFFDF9] text-[#0B132B]">
       {/* 1. Urgency Notice Top Strip */}
       <TopBanner onBookClick={() => handleOpenModal()} />
 

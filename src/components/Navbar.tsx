@@ -28,7 +28,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="font-serif font-extrabold text-base sm:text-xl lg:text-2xl text-[#1E2260] tracking-tight whitespace-nowrap">
+            <span className="font-serif font-extrabold text-base sm:text-xl lg:text-2xl text-[#0B132B] tracking-tight whitespace-nowrap">
               Sanjeev Kumar Pandey
             </span>
             <span className="hidden sm:inline-flex items-center gap-1 bg-[#FFF3E4] text-[#E85D04] border border-[#F48C06]/30 text-[11px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-xs">
@@ -39,7 +39,7 @@ export default function Navbar({ onBookClick }: NavbarProps) {
         </a>
 
         {/* Navigation Links - Cleanly Shown on Large Screens (lg: 1024px+) to Prevent 2nd Line Spill */}
-        <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#1E2260]">
+        <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-[#0B132B]">
           <a
             href="#questions"
             className="hover:text-[#F48C06] transition-colors whitespace-nowrap"

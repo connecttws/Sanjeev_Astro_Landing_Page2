@@ -114,14 +114,14 @@ export default function BookingModal({
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h4 className="font-serif font-bold text-2xl text-[#1E2260]">
+              <h4 className="font-serif font-bold text-2xl text-[#0B132B]">
                 Consultation Confirmed!
               </h4>
-              <p className="text-sm text-[#55597D] mt-2 max-w-sm mx-auto">
+              <p className="text-sm text-[#334155] mt-2 max-w-sm mx-auto">
                 Dhanyawaad, <strong>{name || "Seeker"}</strong>! Aapka ₹99 slot reserve kar liya gaya hai.
               </p>
 
-              <div className="mt-6 bg-[#FFF3E4] border border-[#F48C06]/30 rounded-2xl p-4 text-left text-xs space-y-2 text-[#1E2260]">
+              <div className="mt-6 bg-[#FFF3E4] border border-[#F48C06]/30 rounded-2xl p-4 text-left text-xs space-y-2 text-[#0B132B]">
                 <p><strong>Topic:</strong> {topic}</p>
                 <p><strong>Primary Sawaal:</strong> {question || "Janma Kundali Analysis"}</p>
                 <p><strong>Selected Slot:</strong> {timeSlot}</p>
@@ -133,7 +133,7 @@ export default function BookingModal({
 
               <button
                 onClick={handleReset}
-                className="mt-6 w-full bg-[#1E2260] hover:bg-[#2A2F78] text-white font-bold py-3 px-6 rounded-xl transition-all"
+                className="mt-6 w-full bg-[#0B132B] hover:bg-[#1A254B] text-white font-bold py-3 px-6 rounded-xl transition-all"
               >
                 Close Window
               </button>
@@ -143,13 +143,13 @@ export default function BookingModal({
               
               {/* Consultation Topic */}
               <div>
-                <label className="block text-xs font-bold text-[#1E2260] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
                   Consultation Topic
                 </label>
                 <select
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
-                  className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl px-3.5 py-2.5 text-sm text-[#1E2260] font-medium focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
+                  className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl px-3.5 py-2.5 text-sm text-[#0B132B] font-medium focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                 >
                   <option value="Career & Job">💼 Career & Job Switch</option>
                   <option value="Marriage & Love">💍 Marriage & Kundali Milan</option>
@@ -161,7 +161,7 @@ export default function BookingModal({
 
               {/* Main Question */}
               <div>
-                <label className="block text-xs font-bold text-[#1E2260] uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5 flex items-center justify-between">
                   <span>Apna Mukhya Sawaal (Your Question)</span>
                   <span className="text-[11px] text-[#E85D04] lowercase font-normal">optional / can discuss live</span>
                 </label>
@@ -172,7 +172,7 @@ export default function BookingModal({
                     placeholder="E.g. Job switch kab karein? Ya Shaadi mein delay kyun?"
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
-                    className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-9 pr-3.5 py-2.5 text-xs sm:text-sm text-[#1E2260] placeholder:text-gray-400 focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
+                    className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-9 pr-3.5 py-2.5 text-xs sm:text-sm text-[#0B132B] placeholder:text-gray-400 focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                   />
                 </div>
               </div>
@@ -180,35 +180,35 @@ export default function BookingModal({
               {/* Name & WhatsApp Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-bold text-[#1E2260] uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
                     Your Full Name *
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-[#55597D] absolute left-3 top-3" />
+                    <User className="w-4 h-4 text-[#334155] absolute left-3 top-3" />
                     <input
                       type="text"
                       required
                       placeholder="Rahul Sharma"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-9 pr-3.5 py-2.5 text-xs sm:text-sm text-[#1E2260] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
+                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-9 pr-3.5 py-2.5 text-xs sm:text-sm text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#1E2260] uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
                     WhatsApp Mobile Number *
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-[#55597D] absolute left-3 top-3" />
+                    <Phone className="w-4 h-4 text-[#334155] absolute left-3 top-3" />
                     <input
                       type="tel"
                       required
                       placeholder="9876543210"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-9 pr-3.5 py-2.5 text-xs sm:text-sm text-[#1E2260] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
+                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-9 pr-3.5 py-2.5 text-xs sm:text-sm text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -217,49 +217,49 @@ export default function BookingModal({
               {/* Birth Details (DOB, TOB, Place) */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <label className="block text-[11px] font-bold text-[#1E2260] uppercase tracking-wider mb-1">
+                  <label className="block text-[11px] font-bold text-[#0B132B] uppercase tracking-wider mb-1">
                     Date of Birth *
                   </label>
                   <div className="relative">
-                    <Calendar className="w-3.5 h-3.5 text-[#55597D] absolute left-2.5 top-3" />
+                    <Calendar className="w-3.5 h-3.5 text-[#334155] absolute left-2.5 top-3" />
                     <input
                       type="date"
                       required
                       value={dob}
                       onChange={(e) => setDob(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#1E2260] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
+                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#1E2260] uppercase tracking-wider mb-1">
+                  <label className="block text-[11px] font-bold text-[#0B132B] uppercase tracking-wider mb-1">
                     Birth Time (Approx)
                   </label>
                   <div className="relative">
-                    <Clock className="w-3.5 h-3.5 text-[#55597D] absolute left-2.5 top-3" />
+                    <Clock className="w-3.5 h-3.5 text-[#334155] absolute left-2.5 top-3" />
                     <input
                       type="time"
                       value={tob}
                       onChange={(e) => setTob(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#1E2260] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
+                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold text-[#1E2260] uppercase tracking-wider mb-1">
+                  <label className="block text-[11px] font-bold text-[#0B132B] uppercase tracking-wider mb-1">
                     Birth Place / City *
                   </label>
                   <div className="relative">
-                    <MapPin className="w-3.5 h-3.5 text-[#55597D] absolute left-2.5 top-3" />
+                    <MapPin className="w-3.5 h-3.5 text-[#334155] absolute left-2.5 top-3" />
                     <input
                       type="text"
                       required
                       placeholder="e.g. Lucknow, Delhi"
                       value={city}
                       onChange={(e) => setCity(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#1E2260] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
+                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export default function BookingModal({
 
               {/* Preferred Slot Timing */}
               <div>
-                <label className="block text-xs font-bold text-[#1E2260] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
                   Preferred Time Slot
                 </label>
                 <div className="grid grid-cols-2 gap-2 text-xs">
@@ -284,7 +284,7 @@ export default function BookingModal({
                       className={`p-2 rounded-xl text-left font-medium border transition-all ${
                         timeSlot === slot
                           ? "bg-[#FFF3E4] border-[#F48C06] text-[#E85D04] font-bold shadow-sm"
-                          : "bg-[#FFF9F2] border-gray-200 text-[#55597D]"
+                          : "bg-[#FFF9F2] border-gray-200 text-[#334155]"
                       }`}
                     >
                       {slot}
@@ -296,7 +296,7 @@ export default function BookingModal({
               {/* Price Calculation Box */}
               <div className="bg-[#FFF3E4] border border-[#F48C06]/30 rounded-2xl p-4 flex items-center justify-between">
                 <div>
-                  <span className="text-xs text-[#55597D] font-medium">
+                  <span className="text-xs text-[#334155] font-medium">
                     1-on-1 Consultation Fee
                   </span>
                   <div className="flex items-center gap-2">
@@ -330,7 +330,7 @@ export default function BookingModal({
                 </span>
               </button>
 
-              <div className="flex items-center justify-center gap-2 text-[11px] text-[#55597D]">
+              <div className="flex items-center justify-center gap-2 text-[11px] text-[#334155]">
                 <Lock className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Your birth details are 100% confidential and safe</span>
               </div>

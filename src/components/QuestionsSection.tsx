@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import {
   Briefcase,
   Heart,
   TrendingUp,
-  Users,
   Compass,
   ArrowRight,
   HelpCircle,
@@ -21,9 +19,14 @@ interface QuestionCategory {
   id: string;
   title: string;
   hindiTitle: string;
-  icon: React.ComponentType<{ className?: string }>;
-  color: string;
   badge: string;
+  badgeColor: string;
+  icon: React.ComponentType<{ className?: string }>;
+  iconGradient: string;
+  cardBg: string;
+  cardBorder: string;
+  glowHover: string;
+  topGradient: string;
   questions: string[];
 }
 
@@ -31,74 +34,73 @@ const CATEGORIES: QuestionCategory[] = [
   {
     id: "career",
     title: "Career & Job",
-    hindiTitle: "करियर और नौकरी",
-    icon: Briefcase,
-    color: "from-blue-500 to-indigo-600",
+    hindiTitle: "करियर, नौकरी और प्रमोशन",
     badge: "High Growth",
+    badgeColor: "bg-blue-50 text-blue-700 border-blue-200/80",
+    icon: Briefcase,
+    iconGradient: "from-blue-600 via-indigo-600 to-blue-700 text-white shadow-blue-500/25",
+    cardBg: "bg-gradient-to-br from-white via-[#F8FAFF] to-[#EFF6FF]/50",
+    cardBorder: "border-blue-100/80 hover:border-blue-300",
+    glowHover: "hover:shadow-blue-500/10",
+    topGradient: "from-blue-500 via-indigo-500 to-blue-600",
     questions: [
       "Job switch karna chahiye ya nahi?",
-      "Career mein growth kab hogi?",
-      "New job opportunity ka time?",
-      "Government job ke chances?",
-      "Career direction ko lekar confusion?",
+      "Career mein growth aur promotion kab hogi?",
+      "Nayi job opportunity ka sahi samay kab aayega?",
     ],
   },
   {
     id: "marriage",
     title: "Marriage & Love",
-    hindiTitle: "विवाह और प्रेम",
+    hindiTitle: "विवाह, रिश्ता और प्रेम",
+    badge: "Most Consulted",
+    badgeColor: "bg-rose-50 text-rose-700 border-rose-200/80",
     icon: Heart,
-    color: "from-rose-500 to-pink-600",
-    badge: "Relationship",
+    iconGradient: "from-rose-500 via-pink-600 to-rose-600 text-white shadow-rose-500/25",
+    cardBg: "bg-gradient-to-br from-white via-[#FFF5F7] to-[#FFF1F2]/50",
+    cardBorder: "border-rose-100/80 hover:border-rose-300",
+    glowHover: "hover:shadow-rose-500/10",
+    topGradient: "from-rose-500 via-pink-500 to-rose-600",
     questions: [
-      "Shaadi mein delay kyun ho raha hai?",
-      "Love marriage ya arranged marriage?",
-      "Relationship ka future kya hai?",
-      "Compatibility kaisi rahegi?",
-      "Shaadi ko lekar confusion?",
+      "Shaadi mein delay kyun ho raha hai aur kab tak yog banega?",
+      "Love marriage hogi ya arranged marriage?",
+      "Relationship aur compatibility kaisi rahegi?",
     ],
   },
   {
     id: "business",
     title: "Business & Money",
-    hindiTitle: "व्यापार और धन",
+    hindiTitle: "व्यापार, धन और निवेश",
+    badge: "Financial Yog",
+    badgeColor: "bg-amber-50 text-amber-800 border-amber-200/80",
     icon: TrendingUp,
-    color: "from-amber-500 to-orange-600",
-    badge: "Financial",
+    iconGradient: "from-amber-500 via-orange-500 to-amber-600 text-white shadow-amber-500/25",
+    cardBg: "bg-gradient-to-br from-white via-[#FFFDF5] to-[#FEF3C7]/40",
+    cardBorder: "border-amber-100/80 hover:border-amber-300",
+    glowHover: "hover:shadow-amber-500/10",
+    topGradient: "from-amber-500 via-orange-500 to-amber-600",
     questions: [
-      "Business start karna sahi rahega?",
-      "Business mein growth kab hogi?",
-      "Financial problems ka reason?",
-      "Investment ya business decision ko lekar confusion?",
-      "Paisa related challenges?",
-    ],
-  },
-  {
-    id: "family",
-    title: "Family & Personal Life",
-    hindiTitle: "परिवार और निजी जीवन",
-    icon: Users,
-    color: "from-emerald-500 to-teal-600",
-    badge: "Harmony",
-    questions: [
-      "Family problems baar-baar kyun aa rahi hain?",
-      "Family relationships ko lekar guidance",
-      "Personal life mein confusion",
-      "Important life decisions",
+      "Naya business start karna ya invest karna sahi rahega?",
+      "Business mein profit aur growth kab hogi?",
+      "Financial stability aur karz se rahat kab milegi?",
     ],
   },
   {
     id: "direction",
-    title: "Life Direction",
-    hindiTitle: "जीवन की सही दिशा",
+    title: "Life Direction & Peace",
+    hindiTitle: "जीवन मार्गदर्शन और मानसिक शांति",
+    badge: "Clarity & Peace",
+    badgeColor: "bg-purple-50 text-purple-700 border-purple-200/80",
     icon: Compass,
-    color: "from-purple-500 to-violet-600",
-    badge: "Future Path",
+    iconGradient: "from-purple-600 via-violet-600 to-purple-700 text-white shadow-purple-500/25",
+    cardBg: "bg-gradient-to-br from-white via-[#FAF7FF] to-[#F3E8FF]/40",
+    cardBorder: "border-purple-100/80 hover:border-purple-300",
+    glowHover: "hover:shadow-purple-500/10",
+    topGradient: "from-purple-500 via-violet-500 to-purple-600",
     questions: [
-      "Career ya life mein direction nahi mil rahi?",
-      "Baar-baar same problems kyun aa rahi hain?",
-      "Life ka next phase kaisa ho sakta hai?",
-      "Kisi important decision ko lekar confusion?",
+      "Life aur career ke important decisions mein confusion?",
+      "Life ka agla daur kaisa rahega?",
+      "Family problems aur mansik shanti ke saral upaay?",
     ],
   },
 ];
@@ -107,153 +109,116 @@ export default function QuestionsSection({
   onSelectQuestion,
   onBookClick,
 }: QuestionsSectionProps) {
-  const [activeTab, setActiveTab] = useState<string>("all");
-
-  const filteredCategories =
-    activeTab === "all"
-      ? CATEGORIES
-      : CATEGORIES.filter((c) => c.id === activeTab);
-
   return (
-    <section id="questions" className="py-16 sm:py-24 bg-[#FFFDF9] relative">
+    <section id="questions" className="py-12 sm:py-16 bg-[#FFFDF9] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#FFF3E4] border border-[#F48C06]/30 text-[#E85D04] px-4 py-1 rounded-full text-xs sm:text-sm font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Har Sawaal Ka Sateek Vedic Hal</span>
+        <div className="text-center max-w-2xl mx-auto">
+          <div className="section-eyebrow">
+            <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
+            <span>Sateek Kundali Vishleshan</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-[#1E2260] tracking-tight">
-            Har Sawaal Ka Personalized Jawab
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+            Har Sawaal Ka{" "}
+            <span className="text-[#E85D04] relative inline-block">
+              Personalized Jawab
+              <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
+            </span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[#55597D]">
-            Aapka sawaal chahe career, shaadi ya business se juda ho — Kundali ke
-            graha-dasha ke aadhar par paiye sachha aur spasht uttar.
+          <div className="heading-divider mb-3" />
+          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed">
+            Aapka sawaal chahe career, shaadi ya business se juda ho — Janma Kundali ke graha-dasha ke aadhar par paiye spasht uttar.
           </p>
         </div>
 
-        {/* Filter Pills */}
-        <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <button
-            onClick={() => setActiveTab("all")}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-              activeTab === "all"
-                ? "bg-[#1E2260] text-white shadow-md shadow-[#1E2260]/20"
-                : "bg-[#FFF3E4] text-[#2F327D] hover:bg-[#FBE0C7] border border-[#F48C06]/20"
-            }`}
-          >
-            All Categories (5)
-          </button>
+        {/* Rich 2x2 Categories Grid — 3D Elevated Cards with Orange Border & Moving Glow */}
+        <div className="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
           {CATEGORIES.map((cat) => {
-            const Icon = cat.icon;
-            const isActive = activeTab === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
-                className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
-                  isActive
-                    ? "bg-[#F48C06] text-white shadow-md shadow-[#F48C06]/30"
-                    : "bg-[#FFF3E4] text-[#2F327D] hover:bg-[#FBE0C7] border border-[#F48C06]/20"
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5" />
-                <span>{cat.title}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Categories Grid */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCategories.map((cat) => {
             const Icon = cat.icon;
             return (
               <div
                 key={cat.id}
-                className="vedic-card rounded-2xl p-4 sm:p-6 flex flex-col justify-between group relative overflow-hidden"
+                className="card-3d-orange p-5 sm:p-7 flex flex-col justify-between group"
               >
-                {/* Subtle top color gradient bar */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${cat.color}`}
-                />
+                {/* Moving / Shimmering Top Light Beam */}
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none" />
 
-                <div>
-                  {/* Category Title & Badge */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 rounded-xl bg-[#FFF3E4] border border-[#F48C06]/30 flex items-center justify-center text-[#E85D04] group-hover:scale-110 transition-transform">
-                        <Icon className="w-5 h-5" />
+                {/* Subtle Ambient Radial Glow */}
+                <div className="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-gradient-to-br from-[#F48C06]/15 via-[#FFD166]/10 to-transparent blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+
+                <div className="relative z-10">
+                  {/* Category Header Row */}
+                  <div className="flex items-center justify-between gap-3 mb-5 pb-3.5 border-b border-[#F48C06]/20">
+                    <div className="flex items-center gap-3.5 min-w-0">
+                      {/* Gradient Icon Badge with Orange 3D Ring */}
+                      <div
+                        className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br ${cat.iconGradient} flex items-center justify-center shadow-lg ring-2 ring-[#F48C06]/35 group-hover:scale-105 group-hover:rotate-2 transition-all duration-300 shrink-0`}
+                      >
+                        <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
                       </div>
-                      <div>
-                        <h3 className="font-serif font-bold text-lg text-[#1E2260]">
+                      <div className="min-w-0">
+                        <h3 className="font-serif font-extrabold text-lg sm:text-xl text-[#0B132B] tracking-tight truncate">
                           {cat.title}
                         </h3>
-                        <p className="text-xs text-[#E85D04] font-medium">
+                        <p className="text-xs text-[#E85D04] font-bold mt-0.5 truncate">
                           {cat.hindiTitle}
                         </p>
                       </div>
                     </div>
-                    <span className="text-[11px] font-semibold bg-[#FBE0C7]/60 text-[#1E2260] px-2.5 py-0.5 rounded-full border border-[#F48C06]/20">
-                      {cat.badge}
+
+                    {/* Category Pill Badge */}
+                    <span
+                      className="text-[11px] font-bold px-3 py-1 rounded-full border border-[#F48C06]/30 bg-gradient-to-r from-[#FFF3E4] to-[#FFE8CC] text-[#C2410C] shadow-xs shrink-0 flex items-center gap-1"
+                    >
+                      <Sparkles className="w-2.5 h-2.5 text-[#E85D04]" />
+                      <span>{cat.badge}</span>
                     </span>
                   </div>
 
-                  {/* Question Checklist (Clickable to prefill) */}
-                  <ul className="space-y-2.5 mt-5">
+                  {/* Question Checklist Items — Tactile 3D Buttons */}
+                  <ul className="space-y-2.5">
                     {cat.questions.map((q, idx) => (
                       <li key={idx}>
                         <button
                           onClick={() => onSelectQuestion(q, cat.title)}
-                          className="w-full text-left flex items-start gap-2.5 p-2 rounded-lg hover:bg-[#FFF3E4]/70 transition-colors group/item text-xs sm:text-sm text-[#3A3F6D] hover:text-[#1E2260] border border-transparent hover:border-[#F48C06]/20"
-                          title="Click to ask this question in consultation"
+                          className="w-full text-left flex items-center justify-between gap-3 p-3 sm:p-3.5 rounded-xl bg-white hover:bg-[#FFF9F2] border-2 border-[#F48C06]/30 hover:border-[#F48C06] shadow-[0_3px_10px_-2px_rgba(244,140,6,0.10)] hover:shadow-[0_8px_20px_-4px_rgba(244,140,6,0.22)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-200 group/item cursor-pointer"
+                          title="Click to ask this question"
                         >
-                          <HelpCircle className="w-4 h-4 text-[#F48C06] shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform" />
-                          <span className="flex-1 font-medium">{q}</span>
-                          <span className="text-[#F48C06] opacity-0 group-hover/item:opacity-100 transition-opacity font-bold text-xs">
-                            Ask →
+                          <div className="flex items-center gap-3 min-w-0">
+                            <div className="w-6 h-6 rounded-full bg-[#FFF3E4] border border-[#F48C06]/35 flex items-center justify-center shrink-0 group-hover/item:scale-110 group-hover/item:bg-[#F48C06] group-hover/item:text-white transition-all text-[#E85D04]">
+                              <HelpCircle className="w-3.5 h-3.5" />
+                            </div>
+                            <span className="font-medium text-xs sm:text-sm text-[#0B132B] group-hover/item:text-[#E85D04] transition-colors line-clamp-2 sm:line-clamp-none">
+                              {q}
+                            </span>
+                          </div>
+                          <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white shrink-0 bg-gradient-to-r from-[#F48C06] to-[#E85D04] px-2.5 py-1 rounded-lg shadow-xs group-hover/item:shadow-sm group-hover/item:scale-105 transition-all duration-200">
+                            <span>Poochiye</span>
+                            <ArrowRight className="w-3 h-3 group-hover/item:translate-x-0.5 transition-transform" />
                           </span>
                         </button>
                       </li>
                     ))}
                   </ul>
                 </div>
-
-                {/* Bottom Card Action */}
-                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
-                  <span className="text-xs text-[#55597D]">
-                    15 Min 1-on-1 Guidance
-                  </span>
-                  <button
-                    onClick={() =>
-                      onSelectQuestion(cat.questions[0], cat.title)
-                    }
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#E85D04] hover:text-[#F48C06] transition-colors"
-                  >
-                    <span>Discuss This</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Bottom Helper Note */}
-        <div className="mt-10 text-center">
-          <p className="text-xs sm:text-sm text-[#55597D]">
-            💡 <em>Tip: Kisi bhi question par click karke direct apna sawaal book kar sakte hain.</em>
+        {/* Compact Bottom CTA */}
+        <div className="mt-8 sm:mt-10 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
+          <p className="text-xs sm:text-sm text-[#334155] font-medium">
+            💡 Kisi bhi sawaal par click karke direct apna personalized session book karein.
           </p>
-          <div className="mt-4">
-            <button
-              onClick={onBookClick}
-              className="btn-shimmer inline-flex items-center gap-2 bg-[#F48C06] hover:bg-[#FF7700] text-white text-sm sm:text-base font-bold px-6 py-3 rounded-xl shadow-md hover:shadow-lg transition-all"
-            >
-              <span>Consult Sanjeev Kumar Pandey @ Just ₹99</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
+          <button
+            onClick={onBookClick}
+            className="btn-shimmer inline-flex items-center gap-2 bg-gradient-to-r from-[#F48C06] via-[#FF7700] to-[#E85D04] hover:from-[#E85D04] hover:to-[#F48C06] text-white text-xs sm:text-sm font-bold px-6 py-2.5 rounded-xl shadow-md shadow-[#F48C06]/25 hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all cursor-pointer"
+          >
+            <span>Consult Sanjeev Kumar Pandey @ ₹99</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
 
       </div>

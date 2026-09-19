@@ -44,14 +44,19 @@ export default function WhySection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#FFF3E4] border border-[#F48C06]/30 text-[#E85D04] px-4 py-1 rounded-full text-xs sm:text-sm font-semibold mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Kyun Chune Acharya Sanjeev Kumar Pandey?</span>
+          <div className="section-eyebrow">
+            <Sparkles className="w-3.5 h-3.5 text-[#E85D04]" />
+            <span>Trusted Vedic Astrologer</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-[#1E2260] tracking-tight">
-            Why Consult Sanjeev Kumar Pandey?
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-serif font-extrabold text-[#0B132B] tracking-tight leading-tight">
+            Why Consult{" "}
+            <span className="text-[#E85D04] relative inline-block">
+              Sanjeev Kumar Pandey?
+              <span className="absolute -bottom-1.5 left-0 right-0 h-1 bg-[#F48C06]/35 rounded-full" />
+            </span>
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-[#55597D]">
+          <div className="heading-divider mb-3" />
+          <p className="mt-3 text-sm sm:text-base text-[#334155] leading-relaxed max-w-xl mx-auto">
             Authentic Vedic parampra aur modern practical remedies ka anokha sangam, jo aapke jeevan ko deta hai sateek disha.
           </p>
         </div>
@@ -63,8 +68,10 @@ export default function WhySection() {
             return (
               <div
                 key={index}
-                className="vedic-card rounded-2xl p-6 flex flex-col justify-between relative group hover:border-[#F48C06] transition-all"
+                className="vedic-card rounded-2xl p-6 flex flex-col justify-between relative group hover:border-[#F48C06] transition-all overflow-hidden"
               >
+                {/* Moving / Shimmering Top Light Beam */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none" />
                 <div>
                   <div className="flex items-center justify-between mb-5">
                     <div className="w-12 h-12 rounded-xl bg-[#FFF3E4] border border-[#F48C06]/30 flex items-center justify-center text-[#E85D04] group-hover:scale-110 group-hover:bg-[#F48C06] group-hover:text-white transition-all shadow-sm">
@@ -75,19 +82,19 @@ export default function WhySection() {
                     </span>
                   </div>
 
-                  <h3 className="font-serif font-bold text-lg text-[#1E2260]">
+                  <h3 className="font-serif font-bold text-lg text-[#0B132B]">
                     {item.title}
                   </h3>
                   <p className="text-xs text-[#E85D04] font-medium mb-3">
                     {item.subtitle}
                   </p>
 
-                  <p className="text-xs sm:text-sm text-[#55597D] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#334155] leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs font-semibold text-[#1E2260]">
+                <div className="mt-6 pt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs font-semibold text-[#0B132B]">
                   <Check className="w-3.5 h-3.5 text-[#F48C06]" />
                   <span>{item.highlight}</span>
                 </div>

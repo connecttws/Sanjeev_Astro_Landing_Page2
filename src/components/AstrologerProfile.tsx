@@ -64,7 +64,7 @@ export default function AstrologerProfile({
               </div>
 
               {/* Floating verified badge */}
-              <div className="absolute bottom-2 right-1 sm:right-4 bg-white text-[#1E2260] px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-xl border border-[#F48C06] flex items-center gap-1.5 text-[10px] sm:text-xs font-bold whitespace-nowrap">
+              <div className="absolute bottom-2 right-1 sm:right-4 bg-white text-[#0B132B] px-2.5 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-xl border border-[#F48C06] flex items-center gap-1.5 text-[10px] sm:text-xs font-bold whitespace-nowrap">
                 <Sparkles className="w-3.5 h-3.5 text-[#F48C06] shrink-0" />
                 <span>Certified Vedic Astrologer</span>
               </div>
@@ -73,16 +73,17 @@ export default function AstrologerProfile({
 
           {/* Bio & Content */}
           <div className="lg:col-span-7 text-left min-w-0">
-            <div className="inline-flex items-center gap-2 bg-[#F48C06]/20 border border-[#F48C06]/40 text-[#FFD166] px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-3 max-w-full truncate">
-              <Sparkles className="w-3.5 h-3.5 text-[#F48C06] shrink-0" />
-              <span className="truncate">Meet Your Vedic Guide</span>
+            <div className="section-eyebrow-dark mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-[#FFD166] shrink-0" />
+              <span>Meet Your Vedic Guide</span>
             </div>
 
-            <h2 className="text-2xl min-[380px]:text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-white tracking-tight break-words">
-              Sanjeev Kumar Pandey
+            <h2 className="text-2xl min-[380px]:text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-white tracking-tight leading-tight break-words">
+              Acharya <span className="text-[#FFD166]">Sanjeev Kumar Pandey</span>
             </h2>
-            <p className="mt-1 text-base sm:text-xl font-medium text-[#FFD166]">
-              Vedic Astrology Expert • 10+ Years of Experience
+            <div className="w-14 h-1 bg-gradient-to-r from-[#FFD166] to-[#F48C06] rounded-full my-3" />
+            <p className="mt-1 text-base sm:text-xl font-medium text-[#FFD166]/90">
+              Vedic Astrology Expert • 10+ Years of Clinical Experience
             </p>
 
             <p className="mt-3.5 sm:mt-4 text-xs sm:text-base text-gray-300 leading-relaxed">

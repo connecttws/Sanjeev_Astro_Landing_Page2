@@ -37,7 +37,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased bg-[#FFFDF9] text-[#1E2260] font-sans selection:bg-[#F48C06] selection:text-white overflow-x-hidden min-h-[100dvh]">
+      <body className="antialiased bg-[#FFFDF9] text-[#0B132B] font-sans selection:bg-[#F48C06] selection:text-white overflow-x-hidden min-h-[100dvh]">
         {children}
       </body>
     </html>
