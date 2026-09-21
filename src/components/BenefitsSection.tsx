@@ -308,7 +308,7 @@ export default function BenefitsSection() {
           })}
 
           {/* Quick Summary Promo Card in the 6th slot */}
-          <div className="card-3d-orange rounded-2xl p-6 sm:p-7 bg-gradient-to-br from-[#1E2260] via-[#2A2368] to-[#121538] text-white flex flex-col justify-between shadow-xl border-2 border-[#F48C06]/40 relative overflow-hidden">
+          <div className="rounded-2xl p-6 sm:p-7 bg-gradient-to-br from-[#1E2260] via-[#2A2368] to-[#121538] text-white flex flex-col justify-between relative overflow-hidden border-2 border-[#F48C06]/50 shadow-[0_12px_30px_-6px_rgba(30,34,96,0.45),0_0_25px_rgba(244,140,6,0.15)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-8px_rgba(30,34,96,0.55),0_0_35px_rgba(244,140,6,0.25)]">
             {/* Shimmer beam */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none" />
 

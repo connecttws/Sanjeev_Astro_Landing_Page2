@@ -152,8 +152,8 @@ export default function BookingModal({
                   className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl px-3.5 py-2.5 text-sm text-[#0B132B] font-medium focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
                 >
                   <option value="Career & Job">💼 Career & Job Switch</option>
-                  <option value="Marriage & Love">💍 Marriage & Kundali Milan</option>
-                  <option value="Business & Money">💰 Business, Investment & Finances</option>
+                  <option value="Marriage & Relationship">💍 Marriage & Kundali Milan</option>
+                  <option value="Santan & Family">👶 Santan Prapti & Family</option>
                   <option value="Family & Personal Life">👨‍👩‍👦 Family Harmony & Relations</option>
                   <option value="Life Direction">🧭 Life Direction & Next Phase</option>
                 </select>
