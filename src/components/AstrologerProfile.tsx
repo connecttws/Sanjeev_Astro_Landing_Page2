@@ -107,7 +107,7 @@ export default function AstrologerProfile({
                 <div className="absolute -bottom-3.5 sm:-bottom-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0B132B]/95 via-[#1A1D47]/95 to-[#0B132B]/95 backdrop-blur-md border border-[#FFD166]/60 text-white px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full shadow-2xl flex items-center gap-2 whitespace-nowrap z-20">
                   <Sparkles className="w-3.5 h-3.5 text-[#FFD166] shrink-0" />
                   <span className="text-[11px] sm:text-xs font-bold tracking-wide text-[#FFFDF9]">
-                    Acharya Sanjeev Kumar Pandey
+                    Astro Sanjeev Kumar Pandey
                   </span>
                   <span className="hidden min-[420px]:inline-block text-[10px] px-1.5 py-0.5 rounded bg-[#F48C06]/30 text-[#FFD166] font-semibold border border-[#FFD166]/30">
                     Verified
@@ -126,8 +126,8 @@ export default function AstrologerProfile({
               <span>Meet Your Vedic Guide</span>
             </div>
 
-            <h2 className="text-2xl min-[380px]:text-3xl sm:text-4xl lg:text-5xl font-serif font-extrabold text-white tracking-tight leading-tight break-words">
-              Acharya <span className="text-[#FFD166]">Sanjeev Kumar Pandey</span>
+            <h2 className="text-xl min-[360px]:text-[28px] sm:text-4xl lg:text-5xl font-serif font-extrabold text-white tracking-tight leading-tight break-words">
+              Astro <span className="text-[#FFD166]">Sanjeev Kumar Pandey</span>
             </h2>
             <div className="w-14 h-1 bg-gradient-to-r from-[#FFD166] to-[#F48C06] rounded-full my-3" />
             <p className="mt-1 text-base sm:text-xl font-medium text-[#FFD166]/90">

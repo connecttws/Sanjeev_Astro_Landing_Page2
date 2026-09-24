@@ -51,16 +51,18 @@ export default function VslVideoFrame({
     <>
       {/* ──────── VSL Video Frame Trigger Card ──────── */}
       <div className={`relative w-full ${className}`}>
-        {/* Outer Radiant Glow */}
-        <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-[#F48C06]/30 via-[#FFD166]/20 to-[#E85D04]/30 blur-xl -z-10 opacity-70 group-hover:opacity-100 transition-opacity" />
+        {/* Video Player Box with Contained Radiant Glow */}
+        <div className="relative group cursor-pointer">
+          {/* Outer Radiant Glow strictly behind the video card */}
+          <div className="absolute -inset-0.5 sm:-inset-1 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#F48C06]/25 via-[#FFD166]/15 to-[#E85D04]/25 blur-md -z-10 opacity-70 group-hover:opacity-100 transition-opacity" />
 
-        {/* Video Player Card Shell */}
-        <div
-          onClick={handleOpen}
-          className="relative w-full aspect-video rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#121538] via-[#1E2260] to-[#0A0D28] border-2 border-[#F48C06]/45 shadow-2xl shadow-[#F48C06]/20 overflow-hidden cursor-pointer group select-none flex flex-col justify-between"
-        >
-          {/* Top Moving Shimmer Beam */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none z-20" />
+          {/* Video Player Card Shell */}
+          <div
+            onClick={handleOpen}
+            className="relative w-full aspect-video rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#121538] via-[#1E2260] to-[#0A0D28] border-2 border-[#F48C06]/45 shadow-xl shadow-[#F48C06]/15 overflow-hidden select-none flex flex-col justify-between"
+          >
+            {/* Top Moving Shimmer Beam */}
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#F48C06] via-[#FFD166] to-[#E85D04] bg-[length:200%_auto] animate-shimmer pointer-events-none z-20" />
 
           {/* Background Rotating Sacred Chakra Mandala */}
           <div className="absolute -right-10 -bottom-10 w-52 sm:w-64 h-52 sm:h-64 opacity-15 pointer-events-none z-0">
@@ -148,12 +150,19 @@ export default function VslVideoFrame({
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Caption Below Frame - Guaranteed Single Line */}
-        <div className="mt-1.5 sm:mt-2 flex items-center justify-center gap-1.5 text-[10px] min-[360px]:text-[11px] sm:text-xs text-[#E85D04] font-semibold text-center whitespace-nowrap">
-          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
-          <span className="hidden min-[360px]:inline">15,000+ logon ne dekha yeh video • 2 Min Guide</span>
-          <span className="min-[360px]:hidden">15,000+ views • 2 Min Guide</span>
+        {/* Caption Below Frame - High Contrast, Clean Pill, Ultra-Readable */}
+        <div className="mt-2 sm:mt-2.5 flex items-center justify-center">
+          <div className="inline-flex items-center gap-1.5 px-3 min-[360px]:px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/95 border border-[#F48C06]/35 shadow-xs text-[11px] min-[360px]:text-xs sm:text-[13px] font-semibold text-[#0B132B] whitespace-nowrap">
+            <Sparkles className="w-3.5 h-3.5 text-[#E85D04] shrink-0" />
+            <span className="hidden min-[360px]:inline">
+              <strong className="text-[#0B132B] font-bold">15,000+</strong> logon ne dekha yeh video • <span className="text-[#E85D04] font-bold">2 Min Guide</span>
+            </span>
+            <span className="min-[360px]:hidden">
+              <strong className="text-[#0B132B] font-bold">15K+</strong> views • <span className="text-[#E85D04] font-bold">2 Min Guide</span>
+            </span>
+          </div>
         </div>
       </div>
 

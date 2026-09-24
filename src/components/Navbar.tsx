@@ -27,11 +27,16 @@ export default function Navbar({ onBookClick }: NavbarProps) {
             </div>
           </div>
 
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <span className="font-serif font-extrabold text-[14px] min-[360px]:text-base sm:text-xl lg:text-2xl text-[#0B132B] tracking-tight whitespace-nowrap">
-              Sanjeev Kumar Pandey
-            </span>
-            <span className="hidden sm:inline-flex items-center gap-1 bg-[#FFF3E4] text-[#E85D04] border border-[#F48C06]/30 text-[11px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-xs">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex flex-col justify-center text-left">
+              <span className="font-serif font-extrabold text-[13px] min-[360px]:text-[15px] sm:text-lg lg:text-xl text-[#0B132B] tracking-tight leading-[1.15] whitespace-nowrap">
+                Vedic Astrology
+              </span>
+              <span className="text-[10px] min-[360px]:text-[11px] sm:text-xs font-semibold text-[#E85D04] tracking-wide leading-[1.15] whitespace-nowrap">
+                With Astro Sanjeev
+              </span>
+            </div>
+            <span className="hidden md:inline-flex items-center gap-1 bg-[#FFF3E4] text-[#E85D04] border border-[#F48C06]/30 text-[11px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-xs self-center">
               <Sparkles className="w-2.5 h-2.5" />
               10+ Yrs Exp
             </span>

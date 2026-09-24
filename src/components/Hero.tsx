@@ -40,20 +40,24 @@ export default function Hero({ onBookClick }: HeroProps) {
           {/* ──────── Left Column: Compelling Hook, VSL (on mobile), & Value Proposition ──────── */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left min-w-0">
             
-            {/* Trust Pill - Guaranteed 1 single line on any mobile screen */}
-            <div className="section-eyebrow mb-2.5 sm:mb-4 max-w-full">
-              <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#E85D04] shrink-0" />
-              <span className="hidden min-[380px]:inline">Vedic Astrology • 15,000+ Consultations</span>
-              <span className="min-[380px]:hidden">Vedic Astrology • 15K+ Consultations</span>
+            {/* Trust Pill - Clean White Background, Zero Dark Shade, Ultra Crisp */}
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 min-[360px]:px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white border border-[#F48C06]/35 shadow-xs text-[12px] min-[360px]:text-[13px] sm:text-sm md:text-base font-semibold mb-3 sm:mb-4 max-w-full whitespace-nowrap">
+              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E85D04] shrink-0" />
+              <span className="hidden min-[360px]:inline text-[#0B132B]">
+                <strong className="font-bold text-[#0B132B]">Vedic Astrology</strong> <span className="text-[#F48C06] font-normal mx-0.5">•</span> <span className="text-[#E85D04] font-bold">15,000+ Consultations</span>
+              </span>
+              <span className="min-[360px]:hidden text-[#0B132B]">
+                <strong className="font-bold text-[#0B132B]">Vedic Astro</strong> <span className="text-[#F48C06] font-normal mx-0.5">•</span> <span className="text-[#E85D04] font-bold">15K+ Consults</span>
+              </span>
             </div>
 
-            {/* Main Headline - Centered format with balanced 2-line break */}
-            <h1 className="text-[21px] min-[360px]:text-[23px] min-[400px]:text-3xl sm:text-4xl md:text-5xl lg:text-[45px] font-serif font-extrabold text-[#0B132B] leading-[1.2] sm:leading-[1.22] tracking-tight break-words">
+            {/* Main Headline - Balanced & refined size on both mobile and desktop */}
+            <h1 className="text-[18px] min-[360px]:text-[20px] min-[400px]:text-[22px] sm:text-2xl md:text-3xl lg:text-[35px] font-serif font-extrabold text-[#0B132B] leading-[1.25] sm:leading-[1.25] tracking-tight break-words">
               <span className="block whitespace-nowrap">Ab Aapke Saare Sawaalon Ka</span>
-              <span className="text-[#E85D04] relative inline-block mt-0.5 sm:mt-1.5 whitespace-nowrap">
+              <span className="text-[#E85D04] relative inline-block mt-0.5 sm:mt-1 whitespace-nowrap">
                 Javab Yha Milega!
                 <svg
-                  className="absolute -bottom-1.5 left-0 w-full text-[#F48C06]/40"
+                  className="absolute -bottom-1 sm:-bottom-1.5 left-0 w-full text-[#F48C06]/40"
                   viewBox="0 0 250 12"
                   fill="none"
                   preserveAspectRatio="none"

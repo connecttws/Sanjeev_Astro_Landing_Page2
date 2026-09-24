@@ -6,9 +6,6 @@ import {
   Sparkles,
   ShieldCheck,
   CheckCircle2,
-  Calendar,
-  Clock,
-  MapPin,
   Phone,
   User,
   HelpCircle,
@@ -31,9 +28,7 @@ export default function BookingModal({
 }: BookingModalProps) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [dob, setDob] = useState("");
-  const [tob, setTob] = useState("");
-  const [city, setCity] = useState("");
+  const [birthDetailsAvailability, setBirthDetailsAvailability] = useState("Yes, available");
   const [topic, setTopic] = useState(selectedTopic);
   const [question, setQuestion] = useState(selectedQuestion);
   const [timeSlot, setTimeSlot] = useState("Today Evening (6 PM - 8 PM)");
@@ -124,6 +119,7 @@ export default function BookingModal({
               <div className="mt-6 bg-[#FFF3E4] border border-[#F48C06]/30 rounded-2xl p-4 text-left text-xs space-y-2 text-[#0B132B]">
                 <p><strong>Topic:</strong> {topic}</p>
                 <p><strong>Primary Sawaal:</strong> {question || "Janma Kundali Analysis"}</p>
+                <p><strong>Birth Details:</strong> {birthDetailsAvailability}</p>
                 <p><strong>Selected Slot:</strong> {timeSlot}</p>
                 <p><strong>WhatsApp Phone:</strong> {phone}</p>
                 <p className="text-[11px] text-[#E85D04] font-medium pt-2 border-t border-[#F48C06]/20">
@@ -143,7 +139,7 @@ export default function BookingModal({
               
               {/* Consultation Topic */}
               <div>
-                <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs sm:text-[13px] font-bold text-[#0B132B] mb-1.5">
                   Consultation Topic
                 </label>
                 <select
@@ -161,9 +157,9 @@ export default function BookingModal({
 
               {/* Main Question */}
               <div>
-                <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                <label className="block text-xs sm:text-[13px] font-bold text-[#0B132B] mb-1.5 flex items-center justify-between">
                   <span>Apna Mukhya Sawaal (Your Question)</span>
-                  <span className="text-[11px] text-[#E85D04] lowercase font-normal">optional / can discuss live</span>
+                  <span className="text-[11px] text-[#E85D04] font-normal">Optional / Can discuss live</span>
                 </label>
                 <div className="relative">
                   <HelpCircle className="w-4 h-4 text-[#F48C06] absolute left-3 top-3" />
@@ -180,7 +176,7 @@ export default function BookingModal({
               {/* Name & WhatsApp Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs sm:text-[13px] font-bold text-[#0B132B] mb-1.5">
                     Your Full Name *
                   </label>
                   <div className="relative">
@@ -197,7 +193,7 @@ export default function BookingModal({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs sm:text-[13px] font-bold text-[#0B132B] mb-1.5">
                     WhatsApp Mobile Number *
                   </label>
                   <div className="relative">
@@ -214,60 +210,43 @@ export default function BookingModal({
                 </div>
               </div>
 
-              {/* Birth Details (DOB, TOB, Place) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div>
-                  <label className="block text-[11px] font-bold text-[#0B132B] uppercase tracking-wider mb-1">
-                    Date of Birth *
-                  </label>
-                  <div className="relative">
-                    <Calendar className="w-3.5 h-3.5 text-[#334155] absolute left-2.5 top-3" />
-                    <input
-                      type="date"
-                      required
-                      value={dob}
-                      onChange={(e) => setDob(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[11px] font-bold text-[#0B132B] uppercase tracking-wider mb-1">
-                    Birth Time (Approx)
-                  </label>
-                  <div className="relative">
-                    <Clock className="w-3.5 h-3.5 text-[#334155] absolute left-2.5 top-3" />
-                    <input
-                      type="time"
-                      value={tob}
-                      onChange={(e) => setTob(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-[11px] font-bold text-[#0B132B] uppercase tracking-wider mb-1">
-                    Birth Place / City *
-                  </label>
-                  <div className="relative">
-                    <MapPin className="w-3.5 h-3.5 text-[#334155] absolute left-2.5 top-3" />
-                    <input
-                      type="text"
-                      required
-                      placeholder="e.g. Lucknow, Delhi"
-                      value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      className="w-full bg-[#FFF9F2] border border-[#F48C06]/30 rounded-xl pl-8 pr-2 py-2 text-xs text-[#0B132B] focus:ring-2 focus:ring-[#F48C06] focus:outline-none"
-                    />
-                  </div>
+              {/* Birth Details Availability Question */}
+              <div>
+                <label className="block text-xs sm:text-[13px] font-bold text-[#0B132B] mb-2">
+                  Kya aapke paas apni exact birth details available hain? *
+                </label>
+                <div className="grid grid-cols-1 gap-2">
+                  {[
+                    "Yes, available",
+                    "Date & Place available, exact time nahi pata",
+                    "I need to check",
+                    "Not available",
+                  ].map((option) => (
+                    <label
+                      key={option}
+                      className={`flex items-center gap-2.5 sm:gap-3 p-2.5 sm:p-3 rounded-xl border text-xs sm:text-sm cursor-pointer transition-all ${
+                        birthDetailsAvailability === option
+                          ? "bg-[#FFF3E4] border-[#F48C06] text-[#0B132B] font-bold shadow-xs ring-1 ring-[#F48C06]/40"
+                          : "bg-[#FFF9F2] border-[#F48C06]/20 text-[#334155] hover:bg-[#FFF5EA]"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="birthDetailsAvailability"
+                        value={option}
+                        checked={birthDetailsAvailability === option}
+                        onChange={() => setBirthDetailsAvailability(option)}
+                        className="w-4 h-4 accent-[#E85D04] cursor-pointer shrink-0"
+                      />
+                      <span className="leading-snug">{option}</span>
+                    </label>
+                  ))}
                 </div>
               </div>
 
               {/* Preferred Slot Timing */}
               <div>
-                <label className="block text-xs font-bold text-[#0B132B] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs sm:text-[13px] font-bold text-[#0B132B] mb-1.5">
                   Preferred Time Slot
                 </label>
                 <div className="grid grid-cols-2 gap-2 text-xs">
@@ -294,25 +273,31 @@ export default function BookingModal({
               </div>
 
               {/* Price Calculation Box */}
-              <div className="bg-[#FFF3E4] border border-[#F48C06]/30 rounded-2xl p-4 flex items-center justify-between">
-                <div>
-                  <span className="text-xs text-[#334155] font-medium">
+              <div className="bg-gradient-to-r from-[#FFFDF9] via-[#FFF6EB] to-[#FFF3E4] border border-[#F48C06]/35 rounded-xl sm:rounded-2xl p-3 min-[360px]:p-3.5 sm:p-4 shadow-xs">
+                {/* Row 1: Fee Label & Trust Badge */}
+                <div className="flex items-center justify-between gap-2 mb-1.5">
+                  <span className="text-xs sm:text-sm text-[#0B132B] font-bold">
                     1-on-1 Consultation Fee
                   </span>
-                  <div className="flex items-center gap-2">
-                    <span className="font-serif font-extrabold text-2xl text-[#F48C06]">
-                      ₹99 Only
-                    </span>
-                    <span className="line-through text-xs text-gray-400">₹999</span>
-                    <span className="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-1.5 py-0.5 rounded">
-                      SAVE ₹900
-                    </span>
-                  </div>
+                  <span className="inline-flex items-center gap-1 text-[10px] min-[360px]:text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/70 px-2 py-0.5 rounded-full shrink-0">
+                    <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" />
+                    <span>Safe Checkout</span>
+                  </span>
                 </div>
 
-                <div className="text-right text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span>100% Safe Checkout</span>
+                {/* Row 2: Price Details & Discount Badge */}
+                <div className="flex items-center justify-between gap-2 pt-1.5 border-t border-[#F48C06]/15">
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-serif font-black text-2xl sm:text-3xl text-[#E85D04] tracking-tight">
+                      ₹99
+                    </span>
+                    <span className="line-through text-xs sm:text-sm text-gray-400 font-medium">
+                      ₹999
+                    </span>
+                  </div>
+                  <span className="bg-emerald-100 text-emerald-800 text-[10px] min-[360px]:text-[11px] font-bold px-2 py-0.5 rounded-md border border-emerald-200 shrink-0">
+                    Save ₹900 (90% OFF)
+                  </span>
                 </div>
               </div>
 
